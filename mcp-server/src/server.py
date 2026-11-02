@@ -12,6 +12,7 @@ from src.cutlist_optimizer import optimize_cutting_plan
 from src.project_3d import (
     generate_cabinet_3d,
     generate_krat_chair_3d,
+    generate_krat_side_table_3d,
     generate_niche_3d,
     generate_bookshelf_3d,
     export_project_to_file,
@@ -187,7 +188,9 @@ def preview_furniture_3d(
         shelves: Quantidade de prateleiras (para armário ou estante)
     """
     f_type = furniture_type.lower()
-    if "krat" in f_type or "cadeira" in f_type:
+    if "mesa" in f_type:
+        project_data = generate_krat_side_table_3d()
+    elif "krat" in f_type or "cadeira" in f_type:
         project_data = generate_krat_chair_3d()
     elif "nicho" in f_type:
         project_data = generate_niche_3d(
@@ -242,7 +245,9 @@ def generate_assembly_manual(
         shelves: Quantidade de prateleiras (para armário ou estante)
     """
     f_type = furniture_type.lower()
-    if "krat" in f_type or "cadeira" in f_type:
+    if "mesa" in f_type:
+        project_data = generate_krat_side_table_3d()
+    elif "krat" in f_type or "cadeira" in f_type:
         project_data = generate_krat_chair_3d()
     elif "nicho" in f_type:
         project_data = generate_niche_3d(width=width, height=height, depth=depth, thickness=thickness)

@@ -255,6 +255,173 @@ def generate_krat_chair_3d() -> Dict[str, Any]:
     }
 
 
+
+def generate_krat_side_table_3d() -> Dict[str, Any]:
+    """Gera o modelo 3D da Mesinha Lateral Krat (Gerrit Rietveld, 1934).
+    
+    Projetada com 13 peças de 20mm de espessura (larguras de 140mm e 70mm),
+    aproveitando exatamente a sobra da chapa de Compensado Naval (2200x1600mm).
+    """
+    pieces: List[Dict[str, Any]] = [
+        # Tampo Superior (3 Tábuas com espaçamento de 5mm para escoamento de água)
+        {
+            "id": "tampo_frontal",
+            "name": "Tampo - Tábua Frontal",
+            "group": "group_0",
+            "groupLabel": "Tampo Superior",
+            "size": [490.0, 20.0, 140.0],
+            "pos": [0.0, 390.0, 145.0],
+            "rot": [0.0, 0.0, 0.0],
+            "dir": [0.0, 1.8, 0.4],
+            "dims": [20.0, 140.0, 490.0],
+        },
+        {
+            "id": "tampo_central",
+            "name": "Tampo - Tábua Central",
+            "group": "group_0",
+            "groupLabel": "Tampo Superior",
+            "size": [490.0, 20.0, 140.0],
+            "pos": [0.0, 390.0, 0.0],
+            "rot": [0.0, 0.0, 0.0],
+            "dir": [0.0, 1.8, 0.0],
+            "dims": [20.0, 140.0, 490.0],
+        },
+        {
+            "id": "tampo_traseiro",
+            "name": "Tampo - Tábua Traseira",
+            "group": "group_0",
+            "groupLabel": "Tampo Superior",
+            "size": [490.0, 20.0, 140.0],
+            "pos": [0.0, 390.0, -145.0],
+            "rot": [0.0, 0.0, 0.0],
+            "dir": [0.0, 1.8, -0.4],
+            "dims": [20.0, 140.0, 490.0],
+        },
+        # Lateral Esquerda
+        {
+            "id": "pe_frontal_esq",
+            "name": "Lateral Esq - Pé Frontal",
+            "group": "group_1",
+            "groupLabel": "Lateral Esquerda",
+            "size": [20.0, 380.0, 140.0],
+            "pos": [-210.0, 190.0, 140.0],
+            "rot": [0.0, 0.0, 0.0],
+            "dir": [-1.6, 0.0, 0.3],
+            "dims": [20.0, 140.0, 380.0],
+        },
+        {
+            "id": "pe_traseiro_esq",
+            "name": "Lateral Esq - Pé Traseiro",
+            "group": "group_1",
+            "groupLabel": "Lateral Esquerda",
+            "size": [20.0, 380.0, 140.0],
+            "pos": [-210.0, 190.0, -140.0],
+            "rot": [0.0, 0.0, 0.0],
+            "dir": [-1.6, 0.0, -0.3],
+            "dims": [20.0, 140.0, 380.0],
+        },
+        {
+            "id": "travessa_topo_esq",
+            "name": "Lateral Esq - Travessa Apoio Superior",
+            "group": "group_1",
+            "groupLabel": "Lateral Esquerda",
+            "size": [20.0, 70.0, 420.0],
+            "pos": [-190.0, 345.0, 0.0],
+            "rot": [0.0, 0.0, 0.0],
+            "dir": [-1.4, 0.4, 0.0],
+            "dims": [20.0, 70.0, 420.0],
+        },
+        {
+            "id": "travessa_base_esq",
+            "name": "Lateral Esq - Travessa Base Inferior",
+            "group": "group_1",
+            "groupLabel": "Lateral Esquerda",
+            "size": [20.0, 70.0, 420.0],
+            "pos": [-190.0, 75.0, 0.0],
+            "rot": [0.0, 0.0, 0.0],
+            "dir": [-1.4, -0.3, 0.0],
+            "dims": [20.0, 70.0, 420.0],
+        },
+        # Lateral Direita
+        {
+            "id": "pe_frontal_dir",
+            "name": "Lateral Dir - Pé Frontal",
+            "group": "group_2",
+            "groupLabel": "Lateral Direita",
+            "size": [20.0, 380.0, 140.0],
+            "pos": [210.0, 190.0, 140.0],
+            "rot": [0.0, 0.0, 0.0],
+            "dir": [1.6, 0.0, 0.3],
+            "dims": [20.0, 140.0, 380.0],
+        },
+        {
+            "id": "pe_traseiro_dir",
+            "name": "Lateral Dir - Pé Traseiro",
+            "group": "group_2",
+            "groupLabel": "Lateral Direita",
+            "size": [20.0, 380.0, 140.0],
+            "pos": [210.0, 190.0, -140.0],
+            "rot": [0.0, 0.0, 0.0],
+            "dir": [1.6, 0.0, -0.3],
+            "dims": [20.0, 140.0, 380.0],
+        },
+        {
+            "id": "travessa_topo_dir",
+            "name": "Lateral Dir - Travessa Apoio Superior",
+            "group": "group_2",
+            "groupLabel": "Lateral Direita",
+            "size": [20.0, 70.0, 420.0],
+            "pos": [190.0, 345.0, 0.0],
+            "rot": [0.0, 0.0, 0.0],
+            "dir": [1.4, 0.4, 0.0],
+            "dims": [20.0, 70.0, 420.0],
+        },
+        {
+            "id": "travessa_base_dir",
+            "name": "Lateral Dir - Travessa Base Inferior",
+            "group": "group_2",
+            "groupLabel": "Lateral Direita",
+            "size": [20.0, 70.0, 420.0],
+            "pos": [190.0, 75.0, 0.0],
+            "rot": [0.0, 0.0, 0.0],
+            "dir": [1.4, -0.3, 0.0],
+            "dims": [20.0, 70.0, 420.0],
+        },
+        # Amarração Transversal
+        {
+            "id": "travessa_transversal_frente",
+            "name": "Estrutura - Travessa Transversal Frontal",
+            "group": "group_3",
+            "groupLabel": "Amarração Transversal",
+            "size": [360.0, 70.0, 20.0],
+            "pos": [0.0, 345.0, 140.0],
+            "rot": [0.0, 0.0, 0.0],
+            "dir": [0.0, 0.0, 1.6],
+            "dims": [20.0, 70.0, 360.0],
+        },
+        {
+            "id": "travessa_transversal_tras",
+            "name": "Estrutura - Travessa Transversal Traseira",
+            "group": "group_3",
+            "groupLabel": "Amarração Transversal",
+            "size": [360.0, 70.0, 20.0],
+            "pos": [0.0, 345.0, -140.0],
+            "rot": [0.0, 0.0, 0.0],
+            "dir": [0.0, 0.0, -1.6],
+            "dims": [20.0, 70.0, 360.0],
+        },
+    ]
+
+    return {
+        "title": "Mesinha Lateral Krat (Gerrit Rietveld, 1934)",
+        "dimensions": "490 x 440 x 400 mm",
+        "description": "Mesa lateral modernista da família Crate Furniture (Kratmeubels, 1934) de Gerrit Rietveld. 13 peças de 20mm de espessura projetadas para aproveitar a sobra da chapa de compensado naval.",
+        "pieces": pieces,
+        "tools": recommend_tools("mesa", cuts_in_shop=False),
+        "assembly_guide": build_assembly_guide("mesa", width=490, height=400, depth=440, thickness=20),
+    }
+
+
 def generate_cabinet_3d(
     width: float = 800.0,
     height: float = 600.0,
@@ -660,6 +827,68 @@ def build_assembly_guide(
             ]
         }
     
+    elif "mesa" in f_type:
+        return {
+            "estimated_time_hours": 1.5,
+            "difficulty": "Fácil / Médio (Montagem por esquadro em 90°)",
+            "phases": [
+                {
+                    "phase_number": 1,
+                    "title": "Conferência e Pré-Furação das Peças",
+                    "description": "Separe as 13 peças de compensado naval 20mm (3 do tampo, 4 pés e 6 travessas).",
+                    "steps": [
+                        "Identifique as peças: 3 tábuas do tampo (490x140mm), 4 pés verticais (380x140mm), 4 travessas laterais (420x70mm) e 2 transversais (360x70mm).",
+                        "Lixe suavemente as arestas com lixa grão 150 para quebrar cantos vivos.",
+                        "Execute furações piloto com broca 3.0mm e escareador nos pontos de união dos parafusos."
+                    ],
+                    "tips": "Escareie cerca de 2mm para que a cabeça dos parafusos fique ligeiramente embutida."
+                },
+                {
+                    "phase_number": 2,
+                    "title": "Montagem dos Quadros Laterais (Pernas)",
+                    "description": "Monte os dois quadros laterais rígidos em formato retangular.",
+                    "steps": [
+                        "Una o Pé Frontal e o Pé Traseiro à Travessa de Apoio Superior (420x70mm) rente ao topo a 380mm do chão.",
+                        "Fixe a Travessa Base Inferior (420x70mm) a 40mm do chão, mantendo 90° com esquadro metálico.",
+                        "Repita a operação para a Lateral Direita de forma perfeitamente idêntica."
+                    ],
+                    "tips": "Apoie os dois quadros no chão nivelado para conferir se as alturas estão rigorosamente iguais."
+                },
+                {
+                    "phase_number": 3,
+                    "title": "Travamento Transversal da Base",
+                    "description": "Una as duas laterais com as travessas transversais para criar uma estrutura tridimensional indeformável.",
+                    "steps": [
+                        "Posicione a Travessa Transversal Frontal (360x70mm) e a Traseira (360x70mm) entre os quadros laterais.",
+                        "Parafuse firmemente por dentro nas travessas de apoio superior.",
+                        "Meça as diagonais com a trena para garantir esquadro perfeito."
+                    ],
+                    "tips": "Diagonais com a mesma medida garantem que a mesinha não balance nem torça."
+                },
+                {
+                    "phase_number": 4,
+                    "title": "Fixação das Tábuas do Tampo Ripada",
+                    "description": "Fixação das 3 tábuas de 490x140mm no topo da estrutura.",
+                    "steps": [
+                        "Posicione as 3 tábuas com saliência simétrica de 25mm nas extremidades.",
+                        "Mantenha um vão uniforme de 5mm entre as tábuas para drenagem de água da chuva.",
+                        "Parafuse de cima para baixo nas travessas de apoio superior (ou por baixo com cantoneiras se preferir fixação oculta)."
+                    ],
+                    "tips": "O vão de 5mm previne acúmulo de água no tampo e combina perfeitamente com o estrado da Cadeira Krat."
+                },
+                {
+                    "phase_number": 5,
+                    "title": "Proteção e Acabamento para Uso Externo",
+                    "description": "Impermeabilização com Stain e instalação de sapatas protetoras.",
+                    "steps": [
+                        "Limpe o pó e aplique 2 a 3 demãos de Stain Polisten Incolor ou tonalizado (Sayerlack).",
+                        "Instale sapatas plásticas de 5mm embaixo dos 4 pés para proteger do contato com piso molhado."
+                    ],
+                    "tips": "O Stain penetra na madeira sem criar película quebradiça, garantindo anos de durabilidade no jardim."
+                }
+            ]
+        }
+
     elif "nicho" in f_type:
         return {
             "estimated_time_hours": 1.5,

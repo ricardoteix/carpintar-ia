@@ -1,678 +1,415 @@
 {
-  "title": "Cadeira Krat (Gerrit Rietveld, 1934)",
-  "dimensions": "590 x 630 x 686 mm",
-  "description": "Design clássico modernista de 1934 em 4 módulos construtivos (18 peças de 20mm), sem peças soltas ou flutuando.",
+  "title": "Mesinha Lateral Krat (Gerrit Rietveld, 1934)",
+  "dimensions": "490 x 440 x 400 mm",
+  "description": "Mesa lateral modernista da família Crate Furniture (Kratmeubels, 1934) de Gerrit Rietveld. 13 peças de 20mm de espessura projetadas para aproveitar a sobra da chapa de compensado naval.",
   "pieces": [
     {
-      "id": "group_0_braco",
-      "name": "Lateral Esquerda - Apoio de Braço",
+      "id": "tampo_frontal",
+      "name": "Tampo - Tábua Frontal",
       "group": "group_0",
-      "groupLabel": "Lateral Esquerda",
+      "groupLabel": "Tampo Superior",
       "size": [
+        490.0,
         20.0,
-        70.0,
-        600.0
+        140.0
       ],
       "pos": [
-        -260.0,
-        460.0,
-        0.0
+        0.0,
+        390.0,
+        145.0
       ],
       "rot": [
-        -3.14159,
-        -0.0,
-        -1.5708
-      ],
-      "quaternion": [
-        0.70711,
-        0.70711,
-        -0.0,
-        -0.0
-      ],
-      "dir": [
-        -1.6,
+        0.0,
         0.0,
         0.0
+      ],
+      "dir": [
+        0.0,
+        1.8,
+        0.4
       ],
       "dims": [
         20.0,
-        70.0,
-        600.0
+        140.0,
+        490.0
       ]
     },
     {
-      "id": "group_0_travessa",
-      "name": "Lateral Esquerda - Travessa Larga",
+      "id": "tampo_central",
+      "name": "Tampo - Tábua Central",
       "group": "group_0",
-      "groupLabel": "Lateral Esquerda",
+      "groupLabel": "Tampo Superior",
       "size": [
+        490.0,
         20.0,
-        140.0,
-        600.0
+        140.0
       ],
       "pos": [
-        -255.0,
-        225.0,
+        0.0,
+        390.0,
         0.0
       ],
       "rot": [
-        3.14159,
-        -0.0,
-        -0.0
-      ],
-      "quaternion": [
-        1.0,
         0.0,
-        -0.0,
+        0.0,
         0.0
       ],
       "dir": [
-        -1.6,
         0.0,
+        1.8,
         0.0
       ],
       "dims": [
         20.0,
         140.0,
-        600.0
+        490.0
       ]
     },
     {
-      "id": "group_0_pe_frontal",
-      "name": "Lateral Esquerda - Pé Frontal",
+      "id": "tampo_traseiro",
+      "name": "Tampo - Tábua Traseira",
       "group": "group_0",
-      "groupLabel": "Lateral Esquerda",
+      "groupLabel": "Tampo Superior",
       "size": [
+        490.0,
         20.0,
-        140.0,
-        450.0
+        140.0
       ],
       "pos": [
-        -275.0,
-        225.0,
-        230.0
+        0.0,
+        390.0,
+        -145.0
       ],
       "rot": [
-        1.5708,
         0.0,
-        -0.0
-      ],
-      "quaternion": [
-        0.70711,
-        0.0,
-        -0.0,
-        0.70711
-      ],
-      "dir": [
-        -1.6,
         0.0,
         0.0
+      ],
+      "dir": [
+        0.0,
+        1.8,
+        -0.4
       ],
       "dims": [
         20.0,
         140.0,
-        450.0
+        490.0
       ]
     },
     {
-      "id": "group_0_pe_traseiro",
-      "name": "Lateral Esquerda - Pé Traseiro",
-      "group": "group_0",
-      "groupLabel": "Lateral Esquerda",
-      "size": [
-        20.0,
-        140.0,
-        450.0
-      ],
-      "pos": [
-        -235.0,
-        225.0,
-        -230.0
-      ],
-      "rot": [
-        1.5708,
-        0.0,
-        -0.0
-      ],
-      "quaternion": [
-        0.70711,
-        0.0,
-        -0.0,
-        0.70711
-      ],
-      "dir": [
-        -1.6,
-        0.0,
-        0.0
-      ],
-      "dims": [
-        20.0,
-        140.0,
-        450.0
-      ]
-    },
-    {
-      "id": "group_1_braco",
-      "name": "Lateral Direita - Apoio de Braço",
+      "id": "pe_frontal_esq",
+      "name": "Lateral Esq - Pé Frontal",
       "group": "group_1",
+      "groupLabel": "Lateral Esquerda",
+      "size": [
+        20.0,
+        380.0,
+        140.0
+      ],
+      "pos": [
+        -210.0,
+        190.0,
+        140.0
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dir": [
+        -1.6,
+        0.0,
+        0.3
+      ],
+      "dims": [
+        20.0,
+        140.0,
+        380.0
+      ]
+    },
+    {
+      "id": "pe_traseiro_esq",
+      "name": "Lateral Esq - Pé Traseiro",
+      "group": "group_1",
+      "groupLabel": "Lateral Esquerda",
+      "size": [
+        20.0,
+        380.0,
+        140.0
+      ],
+      "pos": [
+        -210.0,
+        190.0,
+        -140.0
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dir": [
+        -1.6,
+        0.0,
+        -0.3
+      ],
+      "dims": [
+        20.0,
+        140.0,
+        380.0
+      ]
+    },
+    {
+      "id": "travessa_topo_esq",
+      "name": "Lateral Esq - Travessa Apoio Superior",
+      "group": "group_1",
+      "groupLabel": "Lateral Esquerda",
+      "size": [
+        20.0,
+        70.0,
+        420.0
+      ],
+      "pos": [
+        -190.0,
+        345.0,
+        0.0
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dir": [
+        -1.4,
+        0.4,
+        0.0
+      ],
+      "dims": [
+        20.0,
+        70.0,
+        420.0
+      ]
+    },
+    {
+      "id": "travessa_base_esq",
+      "name": "Lateral Esq - Travessa Base Inferior",
+      "group": "group_1",
+      "groupLabel": "Lateral Esquerda",
+      "size": [
+        20.0,
+        70.0,
+        420.0
+      ],
+      "pos": [
+        -190.0,
+        75.0,
+        0.0
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dir": [
+        -1.4,
+        -0.3,
+        0.0
+      ],
+      "dims": [
+        20.0,
+        70.0,
+        420.0
+      ]
+    },
+    {
+      "id": "pe_frontal_dir",
+      "name": "Lateral Dir - Pé Frontal",
+      "group": "group_2",
       "groupLabel": "Lateral Direita",
       "size": [
         20.0,
-        70.0,
-        600.0
+        380.0,
+        140.0
       ],
       "pos": [
-        260.0,
-        460.0,
-        0.0
+        210.0,
+        190.0,
+        140.0
       ],
       "rot": [
         0.0,
         0.0,
-        1.5708
-      ],
-      "quaternion": [
-        0.0,
-        0.0,
-        0.70711,
-        0.70711
-      ],
-      "dir": [
-        1.6,
-        0.0,
-        0.0
-      ],
-      "dims": [
-        20.0,
-        70.0,
-        600.0
-      ]
-    },
-    {
-      "id": "group_1_travessa",
-      "name": "Lateral Direita - Travessa Larga",
-      "group": "group_1",
-      "groupLabel": "Lateral Direita",
-      "size": [
-        20.0,
-        140.0,
-        600.0
-      ],
-      "pos": [
-        255.0,
-        225.0,
-        0.0
-      ],
-      "rot": [
-        -0.0,
-        0.0,
-        -3.14159
-      ],
-      "quaternion": [
-        0.0,
-        0.0,
-        1.0,
-        0.0
-      ],
-      "dir": [
-        1.6,
-        0.0,
-        0.0
-      ],
-      "dims": [
-        20.0,
-        140.0,
-        600.0
-      ]
-    },
-    {
-      "id": "group_1_pe_frontal",
-      "name": "Lateral Direita - Pé Frontal",
-      "group": "group_1",
-      "groupLabel": "Lateral Direita",
-      "size": [
-        20.0,
-        140.0,
-        450.0
-      ],
-      "pos": [
-        275.0,
-        225.0,
-        230.0
-      ],
-      "rot": [
-        1.5708,
-        -0.0,
-        -3.14159
-      ],
-      "quaternion": [
-        -0.0,
-        -0.70711,
-        0.70711,
         0.0
       ],
       "dir": [
         1.6,
         0.0,
-        0.0
+        0.3
       ],
       "dims": [
         20.0,
         140.0,
-        450.0
+        380.0
       ]
     },
     {
-      "id": "group_1_pe_traseiro",
-      "name": "Lateral Direita - Pé Traseiro",
-      "group": "group_1",
+      "id": "pe_traseiro_dir",
+      "name": "Lateral Dir - Pé Traseiro",
+      "group": "group_2",
       "groupLabel": "Lateral Direita",
       "size": [
         20.0,
-        140.0,
-        450.0
+        380.0,
+        140.0
       ],
       "pos": [
-        235.0,
-        225.0,
-        -230.0
+        210.0,
+        190.0,
+        -140.0
       ],
       "rot": [
-        1.5708,
-        -0.0,
-        -3.14159
-      ],
-      "quaternion": [
-        -0.0,
-        -0.70711,
-        0.70711,
+        0.0,
+        0.0,
         0.0
       ],
       "dir": [
         1.6,
         0.0,
+        -0.3
+      ],
+      "dims": [
+        20.0,
+        140.0,
+        380.0
+      ]
+    },
+    {
+      "id": "travessa_topo_dir",
+      "name": "Lateral Dir - Travessa Apoio Superior",
+      "group": "group_2",
+      "groupLabel": "Lateral Direita",
+      "size": [
+        20.0,
+        70.0,
+        420.0
+      ],
+      "pos": [
+        190.0,
+        345.0,
+        0.0
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dir": [
+        1.4,
+        0.4,
         0.0
       ],
       "dims": [
         20.0,
-        140.0,
-        450.0
+        70.0,
+        420.0
       ]
     },
     {
-      "id": "group_2_suporte_frente",
-      "name": "Assento - Travessa Suporte Frontal",
+      "id": "travessa_base_dir",
+      "name": "Lateral Dir - Travessa Base Inferior",
       "group": "group_2",
-      "groupLabel": "Assento",
+      "groupLabel": "Lateral Direita",
       "size": [
         20.0,
         70.0,
-        490.0
+        420.0
       ],
       "pos": [
-        -0.0,
-        258.0,
-        272.6
-      ],
-      "rot": [
-        1.7942,
-        -1.5708,
+        190.0,
+        75.0,
         0.0
       ],
-      "quaternion": [
-        -0.55262,
-        -0.44115,
-        0.55262,
-        0.44116
-      ],
-      "dir": [
-        0.0,
-        0.8,
-        1.2
-      ],
-      "dims": [
-        20.0,
-        70.0,
-        490.0
-      ]
-    },
-    {
-      "id": "group_2_suporte_tras",
-      "name": "Assento - Travessa Suporte Traseira",
-      "group": "group_2",
-      "groupLabel": "Assento",
-      "size": [
-        20.0,
-        70.0,
-        490.0
-      ],
-      "pos": [
-        -0.0,
-        173.8,
-        -98.0
-      ],
       "rot": [
-        1.7942,
-        -1.5708,
+        0.0,
+        0.0,
         0.0
       ],
-      "quaternion": [
-        -0.55262,
-        -0.44115,
-        0.55262,
-        0.44116
-      ],
       "dir": [
-        0.0,
-        0.8,
-        1.2
-      ],
-      "dims": [
-        20.0,
-        70.0,
-        490.0
-      ]
-    },
-    {
-      "id": "group_2_tabua_esq",
-      "name": "Assento - Tábua Lateral Esquerda",
-      "group": "group_2",
-      "groupLabel": "Assento",
-      "size": [
-        20.0,
-        140.0,
-        450.0
-      ],
-      "pos": [
-        -175.0,
-        235.4,
-        82.8
-      ],
-      "rot": [
-        -0.2234,
-        0.0,
-        1.5708
-      ],
-      "quaternion": [
-        -0.07882,
-        0.07882,
-        0.7027,
-        0.7027
-      ],
-      "dir": [
-        0.0,
-        0.8,
-        1.2
-      ],
-      "dims": [
-        20.0,
-        140.0,
-        450.0
-      ]
-    },
-    {
-      "id": "group_2_tabua_dir",
-      "name": "Assento - Tábua Lateral Direita",
-      "group": "group_2",
-      "groupLabel": "Assento",
-      "size": [
-        20.0,
-        140.0,
-        450.0
-      ],
-      "pos": [
-        175.0,
-        235.4,
-        82.8
-      ],
-      "rot": [
-        -0.2234,
-        0.0,
-        1.5708
-      ],
-      "quaternion": [
-        -0.07882,
-        0.07882,
-        0.7027,
-        0.7027
-      ],
-      "dir": [
-        0.0,
-        0.8,
-        1.2
-      ],
-      "dims": [
-        20.0,
-        140.0,
-        450.0
-      ]
-    },
-    {
-      "id": "group_2_tabua_centro",
-      "name": "Assento - Tábua Central",
-      "group": "group_2",
-      "groupLabel": "Assento",
-      "size": [
-        20.0,
-        140.0,
-        450.0
-      ],
-      "pos": [
-        0.0,
-        235.4,
-        82.8
-      ],
-      "rot": [
-        -0.2234,
-        0.0,
-        1.5708
-      ],
-      "quaternion": [
-        -0.07882,
-        0.07882,
-        0.7027,
-        0.7027
-      ],
-      "dir": [
-        0.0,
-        0.8,
-        1.2
-      ],
-      "dims": [
-        20.0,
-        140.0,
-        450.0
-      ]
-    },
-    {
-      "id": "group_3_tabua_esq",
-      "name": "Encosto - Tábua Lateral Esquerda",
-      "group": "group_3",
-      "groupLabel": "Encosto",
-      "size": [
-        20.0,
-        140.0,
-        445.0
-      ],
-      "pos": [
-        -155.0,
-        423.1,
-        -261.7
-      ],
-      "rot": [
-        -2.00015,
-        -0.0,
-        -1.5708
-      ],
-      "quaternion": [
-        0.59504,
-        0.59504,
-        0.38201,
-        -0.38201
-      ],
-      "dir": [
-        0.0,
-        1.2,
-        -1.2
-      ],
-      "dims": [
-        20.0,
-        140.0,
-        445.0
-      ]
-    },
-    {
-      "id": "group_3_tabua_centro",
-      "name": "Encosto - Tábua Central",
-      "group": "group_3",
-      "groupLabel": "Encosto",
-      "size": [
-        20.0,
-        140.0,
-        445.0
-      ],
-      "pos": [
-        -0.0,
-        423.1,
-        -261.7
-      ],
-      "rot": [
-        -2.00015,
-        -0.0,
-        -1.5708
-      ],
-      "quaternion": [
-        0.59504,
-        0.59504,
-        0.38201,
-        -0.38201
-      ],
-      "dir": [
-        0.0,
-        1.2,
-        -1.2
-      ],
-      "dims": [
-        20.0,
-        140.0,
-        445.0
-      ]
-    },
-    {
-      "id": "group_3_suporte_topo",
-      "name": "Encosto - Travessa Traseira Superior",
-      "group": "group_3",
-      "groupLabel": "Encosto",
-      "size": [
-        20.0,
-        70.0,
-        450.0
-      ],
-      "pos": [
-        0.0,
-        585.3,
-        -357.9
-      ],
-      "rot": [
-        2.71224,
-        1.5708,
+        1.4,
+        -0.3,
         0.0
       ],
-      "quaternion": [
-        0.69088,
-        0.15064,
-        0.69088,
-        0.15064
-      ],
-      "dir": [
-        0.0,
-        1.2,
-        -1.2
-      ],
       "dims": [
         20.0,
         70.0,
-        450.0
+        420.0
       ]
     },
     {
-      "id": "group_3_tabua_dir",
-      "name": "Encosto - Tábua Lateral Direita",
+      "id": "travessa_transversal_frente",
+      "name": "Estrutura - Travessa Transversal Frontal",
       "group": "group_3",
-      "groupLabel": "Encosto",
+      "groupLabel": "Amarração Transversal",
       "size": [
-        20.0,
-        140.0,
-        445.0
-      ],
-      "pos": [
-        155.0,
-        423.1,
-        -261.7
-      ],
-      "rot": [
-        -2.00015,
-        -0.0,
-        -1.5708
-      ],
-      "quaternion": [
-        0.59504,
-        0.59504,
-        0.38201,
-        -0.38201
-      ],
-      "dir": [
-        0.0,
-        1.2,
-        -1.2
-      ],
-      "dims": [
-        20.0,
-        140.0,
-        445.0
-      ]
-    },
-    {
-      "id": "group_3_suporte_base",
-      "name": "Encosto - Travessa Traseira Inferior",
-      "group": "group_3",
-      "groupLabel": "Encosto",
-      "size": [
-        20.0,
+        360.0,
         70.0,
-        450.0
+        20.0
       ],
       "pos": [
         0.0,
-        244.3,
-        -201.8
+        345.0,
+        140.0
       ],
       "rot": [
-        2.71224,
-        1.5708,
+        0.0,
+        0.0,
         0.0
       ],
-      "quaternion": [
-        0.69088,
-        0.15064,
-        0.69088,
-        0.15064
-      ],
       "dir": [
         0.0,
-        1.2,
-        -1.2
+        0.0,
+        1.6
       ],
       "dims": [
         20.0,
         70.0,
-        450.0
+        360.0
+      ]
+    },
+    {
+      "id": "travessa_transversal_tras",
+      "name": "Estrutura - Travessa Transversal Traseira",
+      "group": "group_3",
+      "groupLabel": "Amarração Transversal",
+      "size": [
+        360.0,
+        70.0,
+        20.0
+      ],
+      "pos": [
+        0.0,
+        345.0,
+        -140.0
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dir": [
+        0.0,
+        0.0,
+        -1.6
+      ],
+      "dims": [
+        20.0,
+        70.0,
+        360.0
       ]
     }
   ],
   "tools": {
-    "furniture_type": "krat",
-    "is_wood_solid": true,
+    "furniture_type": "mesa",
+    "is_wood_solid": false,
     "cuts_in_shop": false,
     "essential_tools": [
       {
@@ -734,67 +471,62 @@
     ]
   },
   "assembly_guide": {
-    "estimated_time_hours": 3.0,
-    "difficulty": "Médio (Requer conferência de esquadro e pré-furações)",
+    "estimated_time_hours": 1.5,
+    "difficulty": "Fácil / Médio (Montagem por esquadro em 90°)",
     "phases": [
       {
         "phase_number": 1,
-        "title": "Conferência e Pré-Furação dos 4 Módulos",
-        "description": "Separe as 18 peças de Pinus 20mm nos seus respectivos grupos (2x Laterais, Assento e Encosto).",
+        "title": "Conferência e Pré-Furação das Peças",
+        "description": "Separe as 13 peças de compensado naval 20mm (3 do tampo, 4 pés e 6 travessas).",
         "steps": [
-          "Identifique os 4 grupos: Grupo 0 (Lateral Esquerda), Grupo 1 (Lateral Direita), Grupo 2 (Assento) e Grupo 3 (Encosto).",
-          "Marque todas as furações com esquadro e lápis. As tábuas de Pinus racham se parafusadas sem furo piloto.",
-          "Execute furações piloto com broca 3.0mm e escareador 45° na profundidade exata da cabeça do parafuso.",
-          "Lixe suavemente as arestas com lixa grão 180 para quebrar cantos vivos e eliminar farpas."
+          "Identifique as peças: 3 tábuas do tampo (490x140mm), 4 pés verticais (380x140mm), 4 travessas laterais (420x70mm) e 2 transversais (360x70mm).",
+          "Lixe suavemente as arestas com lixa grão 150 para quebrar cantos vivos.",
+          "Execute furações piloto com broca 3.0mm e escareador nos pontos de união dos parafusos."
         ],
-        "tips": "Utilize um sargento para segurar peças sobrepostas antes de furar, garantindo alinhamento perfeito."
+        "tips": "Escareie cerca de 2mm para que a cabeça dos parafusos fique ligeiramente embutida."
       },
       {
         "phase_number": 2,
-        "title": "Montagem das Laterais Esquerda e Direita (Módulos 0 e 1)",
-        "description": "Monte os dois quadros laterais tipo caixote com montantes dianteiro/traseiro, travessa larga e apoio de braço.",
+        "title": "Montagem dos Quadros Laterais (Pernas)",
+        "description": "Monte os dois quadros laterais rígidos em formato retangular.",
         "steps": [
-          "Una o Pé Frontal (20x140x450mm) e o Pé Traseiro (20x140x450mm) à Travessa Larga (20x140x600mm) formando o sanduíche lateral.",
-          "Fixe com 2 a 3 parafusos 4.0x40mm em cada encontro, conferindo 90° com esquadro metálico.",
-          "Posicione o Apoio de Braço plano (20x70x600mm) deitado sobre o topo dos pés (Y=450 a 470mm) e parafuse de cima para baixo escareando bem.",
-          "Repita a montagem para a Lateral Direita de forma perfeitamente espelhada."
+          "Una o Pé Frontal e o Pé Traseiro à Travessa de Apoio Superior (420x70mm) rente ao topo a 380mm do chão.",
+          "Fixe a Travessa Base Inferior (420x70mm) a 40mm do chão, mantendo 90° com esquadro metálico.",
+          "Repita a operação para a Lateral Direita de forma perfeitamente idêntica."
         ],
-        "tips": "Coloque as duas laterais lado a lado no chão plano para garantir que os pés tocam o solo no mesmo nível."
+        "tips": "Apoie os dois quadros no chão nivelado para conferir se as alturas estão rigorosamente iguais."
       },
       {
         "phase_number": 3,
-        "title": "Montagem do Módulo do Assento (Módulo 2)",
-        "description": "Construção do estrado do assento composto por 2 travessas inferiores de 490mm e 3 tábuas superiores.",
+        "title": "Travamento Transversal da Base",
+        "description": "Una as duas laterais com as travessas transversais para criar uma estrutura tridimensional indeformável.",
         "steps": [
-          "Posicione as 2 Travessas de Suporte (20x70x490mm) paralelas a 380mm de distância uma da outra.",
-          "Acomode as 3 Tábuas do Assento (20x140x450mm) apoiadas perpendicularmente sobre as travessas.",
-          "Ajuste os vãos laterais uniformes de 35mm entre as tábuas (use um espaçador de madeira de 35mm como gabarito).",
-          "Parafuse as tábuas nas travessas de suporte com parafusos 4.0x40mm de baixo para cima ou por cima escareado."
+          "Posicione a Travessa Transversal Frontal (360x70mm) e a Traseira (360x70mm) entre os quadros laterais.",
+          "Parafuse firmemente por dentro nas travessas de apoio superior.",
+          "Meça as diagonais com a trena para garantir esquadro perfeito."
         ],
-        "tips": "O módulo do assento formará uma grelha rígida de 490mm de largura que se encaixará justo entre as laterais."
+        "tips": "Diagonais com a mesma medida garantem que a mesinha não balance nem torça."
       },
       {
         "phase_number": 4,
-        "title": "Montagem do Módulo do Encosto (Módulo 3)",
-        "description": "Construção do painel traseiro inclinado com 3 tábuas verticais travadas por 2 travessas traseiras.",
+        "title": "Fixação das Tábuas do Tampo Ripada",
+        "description": "Fixação das 3 tábuas de 490x140mm no topo da estrutura.",
         "steps": [
-          "Alinhe as 3 Tábuas Verticais (20x140x445mm) no piso com espaçamento uniforme de 15mm entre si.",
-          "Posicione a Travessa Traseira Superior (20x70x450mm) no topo e a Travessa Traseira Inferior (20x70x450mm) na base.",
-          "Parafuse as travessas por trás das tábuas verticais para manter a face frontal limpa e lisa para o encosto das costas."
+          "Posicione as 3 tábuas com saliência simétrica de 25mm nas extremidades.",
+          "Mantenha um vão uniforme de 5mm entre as tábuas para drenagem de água da chuva.",
+          "Parafuse de cima para baixo nas travessas de apoio superior (ou por baixo com cantoneiras se preferir fixação oculta)."
         ],
-        "tips": "Certifique-se de que a largura total deste módulo seja 450mm, correspondente ao vão livre interno das laterais."
+        "tips": "O vão de 5mm previne acúmulo de água no tampo e combina perfeitamente com o estrado da Cadeira Krat."
       },
       {
         "phase_number": 5,
-        "title": "União Estrutural e Acabamento",
-        "description": "Junção dos 4 módulos principais no ângulo correto de inclinação Rietveld.",
+        "title": "Proteção e Acabamento para Uso Externo",
+        "description": "Impermeabilização com Stain e instalação de sapatas protetoras.",
         "steps": [
-          "Posicione as duas laterais verticais apoiadas no chão com espaçamento de 490mm.",
-          "Encaixe o módulo do assento com inclinação ergonômica de ~12.8° e parafuse as travessas de 490mm nas faces internas das laterais.",
-          "Encaixe o módulo do encosto com inclinação de ~24.6° apoiando a base sobre as travessas do assento e parafuse firmemente.",
-          "Aplique tapa-furos ou massa para madeira nos parafusos aparentes e finalize com óleo mineral, seladora ou verniz fosco."
+          "Limpe o pó e aplique 2 a 3 demãos de Stain Polisten Incolor ou tonalizado (Sayerlack).",
+          "Instale sapatas plásticas de 5mm embaixo dos 4 pés para proteger do contato com piso molhado."
         ],
-        "tips": "Teste a estabilidade da cadeira sobre uma superfície plana e aplique feltros adesivos na base dos pés para proteger o piso."
+        "tips": "O Stain penetra na madeira sem criar película quebradiça, garantindo anos de durabilidade no jardim."
       }
     ]
   }

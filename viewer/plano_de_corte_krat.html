@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Plano de Corte Oficial - 2 Cadeiras Krat (Compensado Naval 20mm)</title>
+  <style>
+    @page {
+      size: A4 landscape;
+      margin: 10mm;
+    }
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      color: #1e293b;
+      background: #f8fafc;
+      margin: 0;
+      padding: 15px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+    h1 {
+      margin: 0 0 6px 0;
+      font-size: 24px;
+      color: #0f172a;
+    }
+    .subtitle {
+      color: #64748b;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .badge {
+      background: #f1f5f9;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #334155;
+      border: 1px solid #e2e8f0;
+    }
+    .badge-blue { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
+    .badge-orange { background: #fff7ed; color: #c2410c; border-color: #fed7aa; }
+    .badge-green { background: #f0fdf4; color: #15803d; border-color: #bbf7d0; }
+
+    .diagram-card {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 24px;
+    }
+    .diagram-legend {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 12px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .legend-box {
+      width: 16px;
+      height: 16px;
+      border-radius: 3px;
+    }
+
+    .tables-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    th, td {
+      padding: 7px 10px;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    th {
+      background: #f8fafc;
+      font-weight: 600;
+      color: #475569;
+    }
+    .instrucoes {
+      background: #f8fafc;
+      border-left: 4px solid #3b82f6;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .instrucoes h3 {
+      margin: 0 0 8px 0;
+      font-size: 15px;
+      color: #1e3a8a;
+    }
+    .instrucoes ol {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+      }
+      .container {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+      <div>
+        <h1>📐 Plano de Corte Otimizado: 2 Cadeiras Krat (Gerrit Rietveld, 1934)</h1>
+        <div class="subtitle">Material: Compensado Naval 20 mm (Leo Madeiras) | Dimensões da Chapa: 2.200 x 1.600 mm | Espessura da Lâmina: 4.0 mm</div>
+      </div>
+      <button class="no-print" onclick="window.print()" style="padding: 10px 18px; background: #2563eb; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer;">
+        🖨️ Imprimir / Salvar PDF
+      </button>
+    </div>
+
+    <div class="badges">
+      <div class="badge badge-blue">🔵 Cadeira #1: 18 peças</div>
+      <div class="badge badge-orange">🟠 Cadeira #2: 18 peças</div>
+      <div class="badge">📦 Total: 36 peças na mesma chapa</div>
+      <div class="badge badge-green">⚡ Aproveitamento Útil: 57,5%</div>
+      <div class="badge badge-green">🟩 Grande Sobra: 2.180 x 498 mm (~1,08 m²)</div>
+    </div>
+
+    <!-- Diagrama da Chapa -->
+    <div class="diagram-card">
+      <h3 style="margin: 0 0 10px 0; font-size: 15px; color: #334155;">Mapa Visual de Corte com Linhas de Seccionamento e Cotas</h3>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-80 -70 2320.0 1720.0" style="width: 100%; height: auto; max-width: 100%;">
+<rect x="0" y="0" width="2200.0" height="1600.0" fill="#f4f1ea" stroke="#2c3e50" stroke-width="3" rx="4"/><rect x="10.0" y="10.0" width="2180.0" height="1580.0" fill="none" stroke="#bdc3c7" stroke-width="2" stroke-dasharray="6,4"/><rect x="10.0" y="10.0" width="600.0" height="140.0" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/><text x="310.0" y="68.8" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" fill="#1e3a8a" text-anchor="middle">C1: Travessa Lateral 1</text><text x="310.0" y="115.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#475569" text-anchor="middle">600 x 140 mm</text><line x1="612.0" y1="10.0" x2="612.0" y2="150.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="610.0" y="8.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 610</text><rect x="614.0" y="10.0" width="600.0" height="140.0" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/><text x="914.0" y="68.8" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" fill="#7c2d12" text-anchor="middle">C2: Travessa Lateral 1</text><text x="914.0" y="115.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#475569" text-anchor="middle">600 x 140 mm</text><line x1="1216.0" y1="10.0" x2="1216.0" y2="150.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="1214.0" y="8.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 1214</text><rect x="1218.0" y="10.0" width="450.0" height="140.0" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/><text x="1443.0" y="68.8" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" fill="#1e3a8a" text-anchor="middle">C1: Pé Frontal Esq</text><text x="1443.0" y="115.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#475569" text-anchor="middle">450 x 140 mm</text><line x1="1670.0" y1="10.0" x2="1670.0" y2="150.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="1668.0" y="8.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 1668</text><rect x="1672.0" y="10.0" width="450.0" height="140.0" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/><text x="1897.0" y="68.8" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" fill="#7c2d12" text-anchor="middle">C2: Pé Frontal Esq</text><text x="1897.0" y="115.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#475569" text-anchor="middle">450 x 140 mm</text><rect x="2122.0" y="10.0" width="68.0" height="140.0" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/><line x1="10.0" y1="152.0" x2="2190.0" y2="152.0" stroke="#e11d48" stroke-width="3" stroke-dasharray="6,3"/><text x="15.0" y="149.0" font-family="Arial" font-size="11" font-weight="bold" fill="#e11d48">✂️ Linha de Ripamento Y=150 mm</text><rect x="10.0" y="154.0" width="600.0" height="140.0" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/><text x="310.0" y="212.8" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" fill="#1e3a8a" text-anchor="middle">C1: Travessa Lateral 2</text><text x="310.0" y="259.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#475569" text-anchor="middle">600 x 140 mm</text><line x1="612.0" y1="154.0" x2="612.0" y2="294.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="610.0" y="152.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 610</text><rect x="614.0" y="154.0" width="600.0" height="140.0" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/><text x="914.0" y="212.8" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" fill="#7c2d12" text-anchor="middle">C2: Travessa Lateral 2</text><text x="914.0" y="259.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#475569" text-anchor="middle">600 x 140 mm</text><line x1="1216.0" y1="154.0" x2="1216.0" y2="294.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="1214.0" y="152.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 1214</text><rect x="1218.0" y="154.0" width="450.0" height="140.0" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/><text x="1443.0" y="212.8" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" fill="#1e3a8a" text-anchor="middle">C1: Pé Frontal Dir</text><text x="1443.0" y="259.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#475569" text-anchor="middle">450 x 140 mm</text><line x1="1670.0" y1="154.0" x2="1670.0" y2="294.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="1668.0" y="152.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 1668</text><rect x="1672.0" y="154.0" width="450.0" height="140.0" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/><text x="1897.0" y="212.8" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" fill="#7c2d12" text-anchor="middle">C2: Pé Frontal Dir</text><text x="1897.0" y="259.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#475569" text-anchor="middle">450 x 140 mm</text><rect x="2122.0" y="154.0" width="68.0" height="140.0" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/><line x1="10.0" y1="296.0" x2="2190.0" y2="296.0" stroke="#e11d48" stroke-width="3" stroke-dasharray="6,3"/><text x="15.0" y="293.0" font-family="Arial" font-size="11" font-weight="bold" fill="#e11d48">✂️ Linha de Ripamento Y=294 mm</text><rect x="10.0" y="298.0" width="450.0" height="140.0" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/><text x="235.0" y="356.8" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" fill="#1e3a8a" text-anchor="middle">C1: Pé Traseiro Esq</text><text x="235.0" y="403.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#475569" text-anchor="middle">450 x 140 mm</text><line x1="462.0" y1="298.0" x2="462.0" y2="438.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="460.0" y="296.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 460</text><rect x="464.0" y="298.0" width="450.0" height="140.0" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/><text x="689.0" y="356.8" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" fill="#7c2d12" text-anchor="middle">C2: Pé Traseiro Esq</text><text x="689.0" y="403.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#475569" text-anchor="middle">450 x 140 mm</text><line x1="916.0" y1="298.0" x2="916.0" y2="438.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="914.0" y="296.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 914</text><rect x="918.0" y="298.0" width="450.0" height="140.0" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/><text x="1143.0" y="356.8" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" fill="#1e3a8a" text-anchor="middle">C1: Pé Traseiro Dir</text><text x="1143.0" y="403.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#475569" text-anchor="middle">450 x 140 mm</text><line x1="1370.0" y1="298.0" x2="1370.0" y2="438.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="1368.0" y="296.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 1368</text><rect x="1372.0" y="298.0" width="450.0" height="140.0" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/><text x="1597.0" y="356.8" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" fill="#7c2d12" text-anchor="middle">C2: Pé Traseiro Dir</text><text x="1597.0" y="403.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#475569" text-anchor="middle">450 x 140 mm</text><rect x="1822.0" y="298.0" width="368.0" height="140.0" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/><text x="2006.0" y="373.0" font-family="Segoe UI, Arial" font-size="13" fill="#64748b" text-anchor="middle">Retalho 368x140</text><line x1="10.0" y1="440.0" x2="2190.0" y2="440.0" stroke="#e11d48" stroke-width="3" stroke-dasharray="6,3"/><text x="15.0" y="437.0" font-family="Arial" font-size="11" font-weight="bold" fill="#e11d48">✂️ Linha de Ripamento Y=438 mm</text><rect x="10.0" y="442.0" width="450.0" height="140.0" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/><text x="235.0" y="500.8" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" fill="#1e3a8a" text-anchor="middle">C1: Assento Tábua 1</text><text x="235.0" y="547.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#475569" text-anchor="middle">450 x 140 mm</text><line x1="462.0" y1="442.0" x2="462.0" y2="582.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="460.0" y="440.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 460</text><rect x="464.0" y="442.0" width="450.0" height="140.0" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/><text x="689.0" y="500.8" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" fill="#7c2d12" text-anchor="middle">C2: Assento Tábua 1</text><text x="689.0" y="547.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#475569" text-anchor="middle">450 x 140 mm</text><line x1="916.0" y1="442.0" x2="916.0" y2="582.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="914.0" y="440.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 914</text><rect x="918.0" y="442.0" width="450.0" height="140.0" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/><text x="1143.0" y="500.8" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" fill="#1e3a8a" text-anchor="middle">C1: Assento Tábua 2</text><text x="1143.0" y="547.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#475569" text-anchor="middle">450 x 140 mm</text><line x1="1370.0" y1="442.0" x2="1370.0" y2="582.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="1368.0" y="440.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 1368</text><rect x="1372.0" y="442.0" width="450.0" height="140.0" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/><text x="1597.0" y="500.8" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" fill="#7c2d12" text-anchor="middle">C2: Assento Tábua 2</text><text x="1597.0" y="547.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#475569" text-anchor="middle">450 x 140 mm</text><rect x="1822.0" y="442.0" width="368.0" height="140.0" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/><text x="2006.0" y="517.0" font-family="Segoe UI, Arial" font-size="13" fill="#64748b" text-anchor="middle">Retalho 368x140</text><line x1="10.0" y1="584.0" x2="2190.0" y2="584.0" stroke="#e11d48" stroke-width="3" stroke-dasharray="6,3"/><text x="15.0" y="581.0" font-family="Arial" font-size="11" font-weight="bold" fill="#e11d48">✂️ Linha de Ripamento Y=582 mm</text><rect x="10.0" y="586.0" width="450.0" height="140.0" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/><text x="235.0" y="644.8" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" fill="#1e3a8a" text-anchor="middle">C1: Assento Tábua 3</text><text x="235.0" y="691.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#475569" text-anchor="middle">450 x 140 mm</text><line x1="462.0" y1="586.0" x2="462.0" y2="726.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="460.0" y="584.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 460</text><rect x="464.0" y="586.0" width="450.0" height="140.0" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/><text x="689.0" y="644.8" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" fill="#7c2d12" text-anchor="middle">C2: Assento Tábua 3</text><text x="689.0" y="691.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#475569" text-anchor="middle">450 x 140 mm</text><line x1="916.0" y1="586.0" x2="916.0" y2="726.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="914.0" y="584.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 914</text><rect x="918.0" y="586.0" width="445.0" height="140.0" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/><text x="1140.5" y="644.8" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" fill="#1e3a8a" text-anchor="middle">C1: Encosto Tábua 1</text><text x="1140.5" y="691.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#475569" text-anchor="middle">445 x 140 mm</text><line x1="1365.0" y1="586.0" x2="1365.0" y2="726.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="1363.0" y="584.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 1363</text><rect x="1367.0" y="586.0" width="445.0" height="140.0" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/><text x="1589.5" y="644.8" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" fill="#7c2d12" text-anchor="middle">C2: Encosto Tábua 1</text><text x="1589.5" y="691.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#475569" text-anchor="middle">445 x 140 mm</text><rect x="1812.0" y="586.0" width="378.0" height="140.0" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/><text x="2001.0" y="661.0" font-family="Segoe UI, Arial" font-size="13" fill="#64748b" text-anchor="middle">Retalho 378x140</text><line x1="10.0" y1="728.0" x2="2190.0" y2="728.0" stroke="#e11d48" stroke-width="3" stroke-dasharray="6,3"/><text x="15.0" y="725.0" font-family="Arial" font-size="11" font-weight="bold" fill="#e11d48">✂️ Linha de Ripamento Y=726 mm</text><rect x="10.0" y="730.0" width="445.0" height="140.0" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/><text x="232.5" y="788.8" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" fill="#1e3a8a" text-anchor="middle">C1: Encosto Tábua 2</text><text x="232.5" y="835.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#475569" text-anchor="middle">445 x 140 mm</text><line x1="457.0" y1="730.0" x2="457.0" y2="870.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="455.0" y="728.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 455</text><rect x="459.0" y="730.0" width="445.0" height="140.0" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/><text x="681.5" y="788.8" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" fill="#7c2d12" text-anchor="middle">C2: Encosto Tábua 2</text><text x="681.5" y="835.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#475569" text-anchor="middle">445 x 140 mm</text><line x1="906.0" y1="730.0" x2="906.0" y2="870.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="904.0" y="728.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 904</text><rect x="908.0" y="730.0" width="445.0" height="140.0" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/><text x="1130.5" y="788.8" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" fill="#1e3a8a" text-anchor="middle">C1: Encosto Tábua 3</text><text x="1130.5" y="835.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#475569" text-anchor="middle">445 x 140 mm</text><line x1="1355.0" y1="730.0" x2="1355.0" y2="870.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="1353.0" y="728.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 1353</text><rect x="1357.0" y="730.0" width="445.0" height="140.0" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/><text x="1579.5" y="788.8" font-family="Segoe UI, Arial, sans-serif" font-size="19" font-weight="bold" fill="#7c2d12" text-anchor="middle">C2: Encosto Tábua 3</text><text x="1579.5" y="835.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#475569" text-anchor="middle">445 x 140 mm</text><rect x="1802.0" y="730.0" width="388.0" height="140.0" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/><text x="1996.0" y="805.0" font-family="Segoe UI, Arial" font-size="13" fill="#64748b" text-anchor="middle">Retalho 388x140</text><line x1="10.0" y1="872.0" x2="2190.0" y2="872.0" stroke="#e11d48" stroke-width="3" stroke-dasharray="6,3"/><text x="15.0" y="869.0" font-family="Arial" font-size="11" font-weight="bold" fill="#e11d48">✂️ Linha de Ripamento Y=870 mm</text><rect x="10.0" y="874.0" width="600.0" height="70.0" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/><text x="310.0" y="903.4" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1e3a8a" text-anchor="middle">C1: Braço Esq</text><text x="310.0" y="926.5" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#475569" text-anchor="middle">600 x 70 mm</text><line x1="612.0" y1="874.0" x2="612.0" y2="944.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="610.0" y="872.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 610</text><rect x="614.0" y="874.0" width="600.0" height="70.0" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/><text x="914.0" y="903.4" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#7c2d12" text-anchor="middle">C2: Braço Esq</text><text x="914.0" y="926.5" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#475569" text-anchor="middle">600 x 70 mm</text><line x1="1216.0" y1="874.0" x2="1216.0" y2="944.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="1214.0" y="872.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 1214</text><rect x="1218.0" y="874.0" width="490.0" height="70.0" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/><text x="1463.0" y="903.4" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1e3a8a" text-anchor="middle">C1: Suporte Assento 1</text><text x="1463.0" y="926.5" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#475569" text-anchor="middle">490 x 70 mm</text><line x1="1710.0" y1="874.0" x2="1710.0" y2="944.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="1708.0" y="872.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 1708</text><rect x="1712.0" y="874.0" width="450.0" height="70.0" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/><text x="1937.0" y="903.4" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1e3a8a" text-anchor="middle">C1: Suporte Encosto 1</text><text x="1937.0" y="926.5" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#475569" text-anchor="middle">450 x 70 mm</text><rect x="2162.0" y="874.0" width="28.0" height="70.0" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/><line x1="10.0" y1="946.0" x2="2190.0" y2="946.0" stroke="#e11d48" stroke-width="3" stroke-dasharray="6,3"/><text x="15.0" y="943.0" font-family="Arial" font-size="11" font-weight="bold" fill="#e11d48">✂️ Linha de Ripamento Y=944 mm</text><rect x="10.0" y="948.0" width="600.0" height="70.0" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/><text x="310.0" y="977.4" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1e3a8a" text-anchor="middle">C1: Braço Dir</text><text x="310.0" y="1000.5" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#475569" text-anchor="middle">600 x 70 mm</text><line x1="612.0" y1="948.0" x2="612.0" y2="1018.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="610.0" y="946.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 610</text><rect x="614.0" y="948.0" width="600.0" height="70.0" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/><text x="914.0" y="977.4" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#7c2d12" text-anchor="middle">C2: Braço Dir</text><text x="914.0" y="1000.5" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#475569" text-anchor="middle">600 x 70 mm</text><line x1="1216.0" y1="948.0" x2="1216.0" y2="1018.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="1214.0" y="946.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 1214</text><rect x="1218.0" y="948.0" width="490.0" height="70.0" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/><text x="1463.0" y="977.4" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#7c2d12" text-anchor="middle">C2: Suporte Assento 1</text><text x="1463.0" y="1000.5" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#475569" text-anchor="middle">490 x 70 mm</text><line x1="1710.0" y1="948.0" x2="1710.0" y2="1018.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="1708.0" y="946.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 1708</text><rect x="1712.0" y="948.0" width="450.0" height="70.0" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/><text x="1937.0" y="977.4" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#7c2d12" text-anchor="middle">C2: Suporte Encosto 1</text><text x="1937.0" y="1000.5" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#475569" text-anchor="middle">450 x 70 mm</text><rect x="2162.0" y="948.0" width="28.0" height="70.0" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/><line x1="10.0" y1="1020.0" x2="2190.0" y2="1020.0" stroke="#e11d48" stroke-width="3" stroke-dasharray="6,3"/><text x="15.0" y="1017.0" font-family="Arial" font-size="11" font-weight="bold" fill="#e11d48">✂️ Linha de Ripamento Y=1018 mm</text><rect x="10.0" y="1022.0" width="490.0" height="70.0" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/><text x="255.0" y="1051.4" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1e3a8a" text-anchor="middle">C1: Suporte Assento 2</text><text x="255.0" y="1074.5" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#475569" text-anchor="middle">490 x 70 mm</text><line x1="502.0" y1="1022.0" x2="502.0" y2="1092.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="500.0" y="1020.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 500</text><rect x="504.0" y="1022.0" width="490.0" height="70.0" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/><text x="749.0" y="1051.4" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#7c2d12" text-anchor="middle">C2: Suporte Assento 2</text><text x="749.0" y="1074.5" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#475569" text-anchor="middle">490 x 70 mm</text><line x1="996.0" y1="1022.0" x2="996.0" y2="1092.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="994.0" y="1020.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 994</text><rect x="998.0" y="1022.0" width="450.0" height="70.0" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/><text x="1223.0" y="1051.4" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1e3a8a" text-anchor="middle">C1: Suporte Encosto 2</text><text x="1223.0" y="1074.5" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#475569" text-anchor="middle">450 x 70 mm</text><line x1="1450.0" y1="1022.0" x2="1450.0" y2="1092.0" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,2"/><text x="1448.0" y="1020.0" font-family="Arial" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">✂️ 1448</text><rect x="1452.0" y="1022.0" width="450.0" height="70.0" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/><text x="1677.0" y="1051.4" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#7c2d12" text-anchor="middle">C2: Suporte Encosto 2</text><text x="1677.0" y="1074.5" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#475569" text-anchor="middle">450 x 70 mm</text><rect x="1902.0" y="1022.0" width="288.0" height="70.0" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,4"/><text x="2046.0" y="1062.0" font-family="Segoe UI, Arial" font-size="13" fill="#64748b" text-anchor="middle">Retalho 288x70</text><line x1="10.0" y1="1092.0" x2="2190.0" y2="1092.0" stroke="#b91c1c" stroke-width="4" stroke-dasharray="8,4"/><rect x="10.0" y="1092.0" width="2180.0" height="498.0" fill="#ecfdf5" stroke="#059669" stroke-width="2.5" stroke-dasharray="8,5"/><text x="1100.0" y="1331.0" font-family="Segoe UI, Arial" font-size="28" font-weight="bold" fill="#047857" text-anchor="middle">GRANDE SOBRA APROVEITÁVEL (2.180 x 498 mm)</text><text x="1100.0" y="1366.0" font-family="Segoe UI, Arial" font-size="18" fill="#065f46" text-anchor="middle">Área útil limpa: ~1.09 m² (Suficiente para mesa lateral ou banqueta Rietveld)</text>
+<!-- Cota Largura Superior -->
+<line x1="0" y1="-25" x2="2200.0" y2="-25" stroke="#1e293b" stroke-width="2"/>
+<line x1="0" y1="-35" x2="0" y2="-15" stroke="#1e293b" stroke-width="2"/>
+<line x1="2200.0" y1="-35" x2="2200.0" y2="-15" stroke="#1e293b" stroke-width="2"/>
+<text x="1100.0" y="-32" font-family="Arial" font-size="20" font-weight="bold" fill="#1e293b" text-anchor="middle">LARGURA TOTAL DA CHAPA: 2.200 mm</text>
+
+<!-- Cota Altura Lateral -->
+<line x1="-25" y1="0" x2="-25" y2="1600.0" stroke="#1e293b" stroke-width="2"/>
+<line x1="-35" y1="0" x2="-15" y2="0" stroke="#1e293b" stroke-width="2"/>
+<line x1="-35" y1="1600.0" x2="-15" y2="1600.0" stroke="#1e293b" stroke-width="2"/>
+<text x="-35" y="800.0" font-family="Arial" font-size="20" font-weight="bold" fill="#1e293b" text-anchor="middle" transform="rotate(-90 -35 800.0)">ALTURA TOTAL DA CHAPA: 1.600 mm</text>
+
+</svg>
+
+      <div class="diagram-legend">
+        <div class="legend-item"><div class="legend-box" style="background: #dbeafe; border: 1.5px solid #1e40af;"></div> Cadeira 1 (Azul)</div>
+        <div class="legend-item"><div class="legend-box" style="background: #fed7aa; border: 1.5px solid #c2410c;"></div> Cadeira 2 (Laranja)</div>
+        <div class="legend-item"><div class="legend-box" style="background: #ecfdf5; border: 1.5px solid #059669;"></div> Grande Sobra Contínua</div>
+        <div class="legend-item"><span style="color: #dc2626; font-weight: bold;">✂️ - - -</span> Linha de Corte da Serra (Disco 4mm)</div>
+      </div>
+    </div>
+
+    <div class="tables-grid">
+      <div>
+        <h3 style="margin: 0 0 8px 0; font-size: 14px; color: #1e3a8a;">📋 Relação de Tiras Largas (Largura de 140 mm)</h3>
+        <table>
+          <thead>
+            <tr><th>Faixa</th><th>Cadeira</th><th>Identificação da Peça</th><th>Comp.</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>#1</td><td>C1 e C2</td><td>2x Travessas Laterais dos Pés + 2x Pés Frontais Esq</td><td>600, 600, 450, 450</td></tr>
+            <tr><td>#2</td><td>C1 e C2</td><td>2x Travessas Laterais dos Pés + 2x Pés Frontais Dir</td><td>600, 600, 450, 450</td></tr>
+            <tr><td>#3</td><td>C1 e C2</td><td>4x Pés Traseiros (Esq e Dir)</td><td>450, 450, 450, 450</td></tr>
+            <tr><td>#4</td><td>C1 e C2</td><td>4x Tábuas do Assento (Laterais e Centrais)</td><td>450, 450, 450, 450</td></tr>
+            <tr><td>#5</td><td>C1 e C2</td><td>2x Tábuas do Assento + 2x Tábuas do Encosto</td><td>450, 450, 445, 445</td></tr>
+            <tr><td>#6</td><td>C1 e C2</td><td>4x Tábuas do Encosto</td><td>445, 445, 445, 445</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <h3 style="margin: 0 0 8px 0; font-size: 14px; color: #c2410c;">📋 Relação de Tiras Estreitas (Largura de 70 mm)</h3>
+        <table>
+          <thead>
+            <tr><th>Faixa</th><th>Cadeira</th><th>Identificação da Peça</th><th>Comp.</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>#7</td><td>C1 e C2</td><td>2x Apoios de Braço + 1x Sup. Assento + 1x Sup. Encosto</td><td>600, 600, 490, 450</td></tr>
+            <tr><td>#8</td><td>C1 e C2</td><td>2x Apoios de Braço + 1x Sup. Assento + 1x Sup. Encosto</td><td>600, 600, 490, 450</td></tr>
+            <tr><td>#9</td><td>C1 e C2</td><td>2x Sup. Traseiro Assento + 2x Sup. Base Encosto</td><td>490, 490, 450, 450</td></tr>
+          </tbody>
+        </table>
+
+        <div class="instrucoes" style="margin-top: 15px;">
+          <h3>🛠️ Roteiro de Corte na Oficina</h3>
+          <ol>
+            <li><strong>Refile:</strong> Remova 10 mm em todo o perímetro da chapa para esquadro perfeito.</li>
+            <li><strong>Ripamento:</strong> Regule a guia para <strong>140 mm</strong> e tire as 6 primeiras tiras. Depois mude para <strong>70 mm</strong> e tire as 3 tiras estreitas.</li>
+            <li><strong>Seccionamento:</strong> Use batente fixo de comprimento para cortar todas as peças de mesma medida em série (600, 450 e 445 mm).</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
