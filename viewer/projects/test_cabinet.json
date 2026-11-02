@@ -171,5 +171,124 @@
         1.5
       ]
     }
-  ]
+  ],
+  "tools": {
+    "furniture_type": "armario",
+    "is_wood_solid": false,
+    "cuts_in_shop": false,
+    "essential_tools": [
+      {
+        "name": "Parafusadeira / Furadeira",
+        "spec": "Mandril de 3/8 pol com controle de torque (evita espanar MDF ou trincar madeira)",
+        "why": "Furação piloto rápida e parafusamento firme com torque regulado."
+      },
+      {
+        "name": "Broca Piloto 3.0 mm com Escareador",
+        "spec": "Broca de aço rápido 3mm + escareador 45°",
+        "why": "A furação piloto evita que o MDF estufe ou o Pinus rache no topo; o escareador embutir a cabeça do parafuso."
+      },
+      {
+        "name": "Bit Phillips PH2",
+        "spec": "Ponteira de impacto de 50mm ou 65mm com retenção magnética",
+        "why": "Encaixe preciso nos parafusos chipboard sem estragar a fenda."
+      },
+      {
+        "name": "Trena Metálica e Lápis de Marceneiro",
+        "spec": "Trena de 3m a 5m com trava + lápis rígido (grau 2H ou carpinteiro)",
+        "why": "Medição de diagonais e marcação exata das linhas de furação."
+      },
+      {
+        "name": "Esquadro Combinado Metálico",
+        "spec": "300mm com escala milimétrica e bolha de nível",
+        "why": "Garantir 90° perfeitos nos encontros de topos e marcações paralelas."
+      },
+      {
+        "name": "Grampos Sargentos (2 a 4 unidades)",
+        "spec": "Grampos tipo F (abertura 300mm) ou grampos angulares 90°",
+        "why": "Seguram as peças firmemente unidas durante a furação e parafusamento, impedindo desalinhamento."
+      },
+      {
+        "name": "Broca Forstner / Fresa Caneco 35 mm",
+        "spec": "Fresa Forstner 35mm com ponta de centro (ou gabarito de caneco)",
+        "why": "Usinagem da cavidade de 11.5mm de profundidade na face interna das portas para instalar as dobradiças."
+      }
+    ],
+    "optional_tools": [
+      {
+        "name": "Bloco com Lixa Grão 150 / 220",
+        "spec": "Lixa para madeira ou esponja abrasiva média/fina",
+        "why": "Quebra suave de cantos vivos ('arrebitas') e remoção de marcas de lápis."
+      },
+      {
+        "name": "Gabarito de Furação de Cavilhas / Minifix",
+        "spec": "Gabarito autocentrante para furos de 6mm e 8mm",
+        "why": "Permite conexões invisíveis sem parafusos aparentes nas laterais externas."
+      }
+    ],
+    "safety_equipment": [
+      {
+        "item": "Óculos de Proteção",
+        "reason": "Protege contra cavacos e farpas projetadas na furação e corte."
+      },
+      {
+        "item": "Máscara de Proteção Respiratória (PFF2)",
+        "reason": "O pó fino de MDF contém resinas e formaldeído; use sempre ao furar ou lixar."
+      },
+      {
+        "item": "Protetor Auricular (Plug ou Concha)",
+        "reason": "Proteção auditiva ao operar ferramentas elétricas (furadeiras, serras)."
+      }
+    ]
+  },
+  "assembly_guide": {
+    "estimated_time_hours": 4.0,
+    "difficulty": "Médio-Avançado (Envolve dobradiças e portas)",
+    "phases": [
+      {
+        "phase_number": 1,
+        "title": "Fita de Borda e Preparação dos Calços",
+        "description": "Aplicação de fita nas arestas visíveis e furações das ferragens.",
+        "steps": [
+          "Aplique fita de borda nas frentes de todas as peças e em todos os 4 lados das portas.",
+          "Se as portas não vierem furadas de fábrica, use a broca caneco de 35mm para fazer as cavidades de 11.5mm com centro a 22mm da borda.",
+          "Parafuse os calços das dobradiças nas marcas das laterais com parafusos 3.5x16mm."
+        ],
+        "tips": "Não ultrapasse 11.5mm de profundidade no furo do caneco para não atravessar a face da porta."
+      },
+      {
+        "phase_number": 2,
+        "title": "Montagem da Caixaria Principal",
+        "description": "União estrutural de base, laterais e tampo.",
+        "steps": [
+          "Una a Lateral Esquerda à Base com grampos 90° e parafuse com parafusos 4.0x40mm escareados.",
+          "Instale a Lateral Direita e em seguida o Tampo Superior.",
+          "Instale a prateleira intermediária caso o armário possua divisória interna."
+        ],
+        "tips": "Use torque baixo na parafusadeira para dar o aperto final manualmente com chave de fenda."
+      },
+      {
+        "phase_number": 3,
+        "title": "Esquadro e Fundo Traseiro",
+        "description": "Travamento da estrutura antes da instalação das portas.",
+        "steps": [
+          "Meça as diagonais com a trena e ajuste até ficarem rigorosamente iguais.",
+          "Fixe o fundo de 6mm com parafusos 3.0x20mm a cada 15cm por todo o contorno.",
+          "Instale as cantoneiras reforçadas de fixação na parede nos cantos superiores internos."
+        ],
+        "tips": "Um armário fora de esquadro impedirá que as portas fiquem alinhadas."
+      },
+      {
+        "phase_number": 4,
+        "title": "Instalação e Regulagem das Portas",
+        "description": "Encaixe das dobradiças e alinhamento milimétrico das frestas.",
+        "steps": [
+          "Fixe as dobradiças caneco nas portas com parafusos 3.5x16mm.",
+          "Encaixe o braço da dobradiça no calço da lateral (sistema click ou parafuso de fixação).",
+          "Regule os 3 parafusos da dobradiça: profundidade (afastamento da caixa), altura (nível) e lateral (fresta central entre as portas).",
+          "Cole os batentes de silicone anti-impacto no canto oposto às dobradiças."
+        ],
+        "tips": "A fresta central recomendada entre duas portas de giro é de 3mm a 4mm."
+      }
+    ]
+  }
 }

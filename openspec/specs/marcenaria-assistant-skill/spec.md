@@ -1,7 +1,8 @@
 # marcenaria-assistant-skill Specification
 
 ## Purpose
-TBD - created by archiving change leomadeiras-marcenaria-mcp-skill. Update Purpose after archive.
+Skill para Antigravity que capacita o assistente a projetar móveis, calcular listas de corte (BOM), planos 2D, kits de montagem, orçamentos na Leo Madeiras, visualizações 3D explodidas, ferramental mínimo e manuais de montagem completos.
+
 ## Requirements
 ### Requirement: Orientação e Decomposição de Móveis em Peças
 A Skill SHALL fornecer ao agente instruções para decompor a solicitação de um móvel em sua lista de corte (BOM), aplicando descontos de espessura de chapa (ex: 15mm ou 18mm) para tampos, bases, laterais e fundos.
@@ -45,3 +46,16 @@ A Skill SHALL orientar o agente a sempre acionar a ferramenta `preview_furniture
 - **WHEN** o agente finaliza o cálculo da lista de corte e orçamento
 - **THEN** o agente atualiza o modelo 3D e avisa que o visualizador já reflete o projeto atual
 
+### Requirement: Orientação de Ferramentas e Segurança
+A skill SHALL instruir o usuário sobre o ferramental mínimo obrigatório e equipamentos de proteção individual (EPIs) antes do início da montagem.
+
+#### Scenario: Orientação do assistente no chat
+- **WHEN** um projeto de móvel é finalizado
+- **THEN** o assistente apresenta o resumo das ferramentas necessárias e oferece o manual de montagem
+
+### Requirement: Entrega do Manual Passo a Passo
+A skill SHALL orientar o usuário a inspecionar e baixar o manual de montagem diretamente no visualizador 3D ou consultar no próprio chat.
+
+#### Scenario: Consulta do manual
+- **WHEN** o usuário solicita instruções de montagem
+- **THEN** o assistente apresenta a sequência ordenada de fases com tempos estimados e cuidados de esquadro

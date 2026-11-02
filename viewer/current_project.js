@@ -670,5 +670,133 @@ window.CURRENT_PROJECT = {
         450.0
       ]
     }
-  ]
+  ],
+  "tools": {
+    "furniture_type": "krat",
+    "is_wood_solid": true,
+    "cuts_in_shop": false,
+    "essential_tools": [
+      {
+        "name": "Parafusadeira / Furadeira",
+        "spec": "Mandril de 3/8 pol com controle de torque (evita espanar MDF ou trincar madeira)",
+        "why": "Furação piloto rápida e parafusamento firme com torque regulado."
+      },
+      {
+        "name": "Broca Piloto 3.0 mm com Escareador",
+        "spec": "Broca de aço rápido 3mm + escareador 45°",
+        "why": "A furação piloto evita que o MDF estufe ou o Pinus rache no topo; o escareador embutir a cabeça do parafuso."
+      },
+      {
+        "name": "Bit Phillips PH2",
+        "spec": "Ponteira de impacto de 50mm ou 65mm com retenção magnética",
+        "why": "Encaixe preciso nos parafusos chipboard sem estragar a fenda."
+      },
+      {
+        "name": "Trena Metálica e Lápis de Marceneiro",
+        "spec": "Trena de 3m a 5m com trava + lápis rígido (grau 2H ou carpinteiro)",
+        "why": "Medição de diagonais e marcação exata das linhas de furação."
+      },
+      {
+        "name": "Esquadro Combinado Metálico",
+        "spec": "300mm com escala milimétrica e bolha de nível",
+        "why": "Garantir 90° perfeitos nos encontros de topos e marcações paralelas."
+      },
+      {
+        "name": "Grampos Sargentos (2 a 4 unidades)",
+        "spec": "Grampos tipo F (abertura 300mm) ou grampos angulares 90°",
+        "why": "Seguram as peças firmemente unidas durante a furação e parafusamento, impedindo desalinhamento."
+      }
+    ],
+    "optional_tools": [
+      {
+        "name": "Bloco com Lixa Grão 150 / 220",
+        "spec": "Lixa para madeira ou esponja abrasiva média/fina",
+        "why": "Quebra suave de cantos vivos ('arrebitas') e remoção de marcas de lápis."
+      },
+      {
+        "name": "Gabarito de Furação de Cavilhas / Minifix",
+        "spec": "Gabarito autocentrante para furos de 6mm e 8mm",
+        "why": "Permite conexões invisíveis sem parafusos aparentes nas laterais externas."
+      }
+    ],
+    "safety_equipment": [
+      {
+        "item": "Óculos de Proteção",
+        "reason": "Protege contra cavacos e farpas projetadas na furação e corte."
+      },
+      {
+        "item": "Máscara de Proteção Respiratória (PFF2)",
+        "reason": "O pó fino de MDF contém resinas e formaldeído; use sempre ao furar ou lixar."
+      },
+      {
+        "item": "Protetor Auricular (Plug ou Concha)",
+        "reason": "Proteção auditiva ao operar ferramentas elétricas (furadeiras, serras)."
+      }
+    ]
+  },
+  "assembly_guide": {
+    "estimated_time_hours": 3.0,
+    "difficulty": "Médio (Requer conferência de esquadro e pré-furações)",
+    "phases": [
+      {
+        "phase_number": 1,
+        "title": "Conferência e Pré-Furação dos 4 Módulos",
+        "description": "Separe as 18 peças de Pinus 20mm nos seus respectivos grupos (2x Laterais, Assento e Encosto).",
+        "steps": [
+          "Identifique os 4 grupos: Grupo 0 (Lateral Esquerda), Grupo 1 (Lateral Direita), Grupo 2 (Assento) e Grupo 3 (Encosto).",
+          "Marque todas as furações com esquadro e lápis. As tábuas de Pinus racham se parafusadas sem furo piloto.",
+          "Execute furações piloto com broca 3.0mm e escareador 45° na profundidade exata da cabeça do parafuso.",
+          "Lixe suavemente as arestas com lixa grão 180 para quebrar cantos vivos e eliminar farpas."
+        ],
+        "tips": "Utilize um sargento para segurar peças sobrepostas antes de furar, garantindo alinhamento perfeito."
+      },
+      {
+        "phase_number": 2,
+        "title": "Montagem das Laterais Esquerda e Direita (Módulos 0 e 1)",
+        "description": "Monte os dois quadros laterais tipo caixote com montantes dianteiro/traseiro, travessa larga e apoio de braço.",
+        "steps": [
+          "Una o Pé Frontal (20x140x450mm) e o Pé Traseiro (20x140x450mm) à Travessa Larga (20x140x600mm) formando o sanduíche lateral.",
+          "Fixe com 2 a 3 parafusos 4.0x40mm em cada encontro, conferindo 90° com esquadro metálico.",
+          "Posicione o Apoio de Braço plano (20x70x600mm) deitado sobre o topo dos pés (Y=450 a 470mm) e parafuse de cima para baixo escareando bem.",
+          "Repita a montagem para a Lateral Direita de forma perfeitamente espelhada."
+        ],
+        "tips": "Coloque as duas laterais lado a lado no chão plano para garantir que os pés tocam o solo no mesmo nível."
+      },
+      {
+        "phase_number": 3,
+        "title": "Montagem do Módulo do Assento (Módulo 2)",
+        "description": "Construção do estrado do assento composto por 2 travessas inferiores de 490mm e 3 tábuas superiores.",
+        "steps": [
+          "Posicione as 2 Travessas de Suporte (20x70x490mm) paralelas a 380mm de distância uma da outra.",
+          "Acomode as 3 Tábuas do Assento (20x140x450mm) apoiadas perpendicularmente sobre as travessas.",
+          "Ajuste os vãos laterais uniformes de 35mm entre as tábuas (use um espaçador de madeira de 35mm como gabarito).",
+          "Parafuse as tábuas nas travessas de suporte com parafusos 4.0x40mm de baixo para cima ou por cima escareado."
+        ],
+        "tips": "O módulo do assento formará uma grelha rígida de 490mm de largura que se encaixará justo entre as laterais."
+      },
+      {
+        "phase_number": 4,
+        "title": "Montagem do Módulo do Encosto (Módulo 3)",
+        "description": "Construção do painel traseiro inclinado com 3 tábuas verticais travadas por 2 travessas traseiras.",
+        "steps": [
+          "Alinhe as 3 Tábuas Verticais (20x140x445mm) no piso com espaçamento uniforme de 15mm entre si.",
+          "Posicione a Travessa Traseira Superior (20x70x450mm) no topo e a Travessa Traseira Inferior (20x70x450mm) na base.",
+          "Parafuse as travessas por trás das tábuas verticais para manter a face frontal limpa e lisa para o encosto das costas."
+        ],
+        "tips": "Certifique-se de que a largura total deste módulo seja 450mm, correspondente ao vão livre interno das laterais."
+      },
+      {
+        "phase_number": 5,
+        "title": "União Estrutural e Acabamento",
+        "description": "Junção dos 4 módulos principais no ângulo correto de inclinação Rietveld.",
+        "steps": [
+          "Posicione as duas laterais verticais apoiadas no chão com espaçamento de 490mm.",
+          "Encaixe o módulo do assento com inclinação ergonômica de ~12.8° e parafuse as travessas de 490mm nas faces internas das laterais.",
+          "Encaixe o módulo do encosto com inclinação de ~24.6° apoiando a base sobre as travessas do assento e parafuse firmemente.",
+          "Aplique tapa-furos ou massa para madeira nos parafusos aparentes e finalize com óleo mineral, seladora ou verniz fosco."
+        ],
+        "tips": "Teste a estabilidade da cadeira sobre uma superfície plana e aplique feltros adesivos na base dos pés para proteger o piso."
+      }
+    ]
+  }
 };

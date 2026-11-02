@@ -47,6 +47,7 @@
 
     <div class="actions">
       <button id="btnReloadProject" title="Recarregar Projeto Atual do Chat" style="border-color: #fbbf24; color: #fbbf24;">⚡ Atualizar do Chat</button>
+      <button id="btnOpenManual" title="Abrir Manual de Montagem e Guia de Ferramentas" style="border-color: #38bdf8; color: #38bdf8; font-weight: 600;">📖 Manual</button>
       <button id="btnResetView" title="Vista Isométrica / 3D">👁️ 3D</button>
       <button id="btnViewFront" title="Vista Frontal">📐 Frontal</button>
       <button id="btnViewSide" title="Vista Lateral">📐 Lateral</button>
@@ -95,6 +96,28 @@
     <span>🔍 <strong>Zoom:</strong> Scroll do Mouse</span>
     <span>↔️ <strong>Mover:</strong> Botão Direito</span>
   </footer>
+
+  <!-- Modal / Painel do Manual de Montagem -->
+  <div id="manualModal" class="manual-modal" style="display: none;">
+    <div class="manual-modal-overlay" id="manualOverlay"></div>
+    <div class="manual-modal-container">
+      <header class="manual-modal-header">
+        <div>
+          <h2 id="manualTitle">📖 Manual de Montagem & Ferramental</h2>
+          <span id="manualSubtitle" class="manual-subtitle"></span>
+        </div>
+        <div class="manual-modal-actions">
+          <button id="btnDownloadMd" class="btn-manual-action" title="Baixar roteiro em Markdown (.md)">📥 Baixar .MD</button>
+          <button id="btnPrintPdf" class="btn-manual-action" title="Imprimir ou Salvar como PDF">🖨️ PDF / Imprimir</button>
+          <button id="btnCloseManual" class="btn-close-modal" title="Fechar Manual">✕</button>
+        </div>
+      </header>
+
+      <div class="manual-modal-body" id="manualContent">
+        <!-- Preenchido dinamicamente pelo app.js -->
+      </div>
+    </div>
+  </div>
 
   <script src="current_project.js"></script>
   <script type="module" src="app.js"></script>

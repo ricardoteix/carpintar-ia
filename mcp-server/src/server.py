@@ -1,7 +1,10 @@
 """Servidor FastMCP para apoio à Marcenaria com integração aos dados da Leo Madeiras."""
 
 from typing import Any, Dict, List, Optional
-from mcp.server.fastmcp import FastMCP
+try:
+    from mcp.server.mcpserver import MCPServer as FastMCP
+except (ImportError, ModuleNotFoundError):
+    from mcp.server.fastmcp import FastMCP
 
 from src.leo_client import LeoMadeirasClient
 from src.rules import recommend_hardware
@@ -210,6 +213,90 @@ def preview_furniture_3d(
             f"O projeto '{project_data['title']}' foi renderizado e salvo como o projeto ativo do chat! "
             "Abra ou recarregue 'viewer/index.html' no seu navegador para inspecionar em 3D com visão explodida."
         ),
+    }
+
+
+
+
+@mcp.tool()
+def generate_assembly_manual(
+    furniture_type: str = "krat",
+    width: float = 800.0,
+    height: float = 600.0,
+    depth: float = 350.0,
+    thickness: float = 15.0,
+    doors: int = 2,
+    shelves: int = 1,
+) -> Dict[str, Any]:
+    """Gera o manual de montagem passo a passo, lista de ferramentas e EPIs para o móvel.
+
+    Atualiza o projeto ativo no visualizador local (viewer/) e retorna o manual em texto formatado.
+
+    Args:
+        furniture_type: 'krat' (Cadeira Rietveld), 'armario', 'nicho', 'estante'
+        width: Largura externa em mm
+        height: Altura externa em mm
+        depth: Profundidade externa em mm
+        thickness: Espessura da chapa em mm
+        doors: Quantidade de portas (para armário)
+        shelves: Quantidade de prateleiras (para armário ou estante)
+    """
+    f_type = furniture_type.lower()
+    if "krat" in f_type or "cadeira" in f_type:
+        project_data = generate_krat_chair_3d()
+    elif "nicho" in f_type:
+        project_data = generate_niche_3d(width=width, height=height, depth=depth, thickness=thickness)
+    elif "estante" in f_type or "livro" in f_type:
+        project_data = generate_bookshelf_3d(width=width, height=height, depth=depth, thickness=thickness, shelves_count=shelves)
+    else:
+        project_data = generate_cabinet_3d(width=width, height=height, depth=depth, thickness=thickness, doors=doors, shelves=shelves)
+
+    save_current_project(project_data)
+
+    tools = project_data.get("tools", {})
+    guide = project_data.get("assembly_guide", {})
+
+    md_lines: List[str] = []
+    md_lines.append(f"# Manual de Montagem: {project_data['title']}")
+    md_lines.append(f"**Dimensões:** {project_data['dimensions']} | **Dificuldade:** {guide.get('difficulty', 'Média')} | **Tempo Estimado:** {guide.get('estimated_time_hours', 2)}h\n")
+    
+    md_lines.append("## 1. Ferramentas Necessárias")
+    md_lines.append("### 🧰 Essenciais:")
+    for t in tools.get("essential_tools", []):
+        md_lines.append(f"- **{t['name']}** ({t['spec']}): {t['why']}")
+
+    if tools.get("optional_tools"):
+        md_lines.append("\n### ⚙️ Opcionais / Recomendadas:")
+        for t in tools.get("optional_tools", []):
+            md_lines.append(f"- **{t['name']}** ({t['spec']}): {t['why']}")
+
+    if tools.get("safety_equipment"):
+        md_lines.append("\n### 🛡️ Equipamentos de Proteção (EPIs):")
+        for s in tools.get("safety_equipment", []):
+            md_lines.append(f"- **{s['item']}**: {s['reason']}")
+
+    md_lines.append("\n## 2. Roteiro Passo a Passo de Montagem")
+    for phase in guide.get("phases", []):
+        md_lines.append(f"\n### Fase {phase['phase_number']}: {phase['title']}")
+        if phase.get("description"):
+            md_lines.append(f"*{phase['description']}*\n")
+        for step in phase.get("steps", []):
+            md_lines.append(f"- [ ] {step}")
+        if phase.get("tips"):
+            md_lines.append(f"> 💡 **Dica de Marceneiro:** {phase['tips']}")
+
+    markdown_text = "\n".join(md_lines)
+
+    return {
+        "status": "success",
+        "project_title": project_data["title"],
+        "dimensions": project_data["dimensions"],
+        "estimated_time_hours": guide.get("estimated_time_hours", 2),
+        "difficulty": guide.get("difficulty", "Média"),
+        "total_phases": len(guide.get("phases", [])),
+        "tools": tools,
+        "assembly_guide": guide,
+        "markdown_manual": markdown_text,
     }
 
 

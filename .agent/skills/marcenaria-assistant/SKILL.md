@@ -1,11 +1,11 @@
 ---
 name: marcenaria-assistant
-description: Assistente especializado em projetos de marcenaria DIY e profissional. Transforma ideias de móveis em listas de corte (BOM), calcula plano de corte 2D de chapas, deduz kits de montagem/ferragens, orça materiais na Leo Madeiras e gera visualização 3D explodida.
+description: Assistente especializado em projetos de marcenaria DIY e profissional. Transforma ideias de móveis em listas de corte (BOM), calcula plano de corte 2D de chapas, deduz kits de montagem/ferragens, orça materiais na Leo Madeiras, gera visualização 3D explodida, orienta ferramentas necessárias e entrega manual de montagem estruturado.
 ---
 
 # Marcenaria Assistant Skill
 
-Esta skill guia o agente a atuar como um projetista e marceneiro experiente. Ela traduz pedidos de construção de móveis em listas precisas de corte de peças, calcula o aproveitamento de chapas industriais em plano de corte 2D, deduz kits de ferragens/insumos, cota materiais na Leo Madeiras e gera visualização 3D explodida para apoio à montagem.
+Esta skill guia o agente a atuar como um projetista e marceneiro experiente. Ela traduz pedidos de construção de móveis em listas precisas de corte de peças, calcula o aproveitamento de chapas industriais em plano de corte 2D, deduz kits de ferragens/insumos, cota materiais na Leo Madeiras, gera visualização 3D explodida, deduz o conjunto de ferramentas e entrega o manual de montagem passo a passo.
 
 ---
 
@@ -47,6 +47,12 @@ Quando o usuário solicitar apoio para construir ou projetar algo:
 ┌────────────────────────────────────────────────────────┐
 │ 6. Visualização 3D e Visão Explodida de Montagem      │
 │    (Inspeção no viewer/index.html com slider 0-100%)  │
+└──────────────────────────┬─────────────────────────────┘
+                           │
+                           ▼
+┌────────────────────────────────────────────────────────┐
+│ 7. Guia de Ferramentas, EPIs e Manual de Montagem     │
+│    (Roteiro sequencial, download em .MD e PDF)        │
 └────────────────────────────────────────────────────────┘
 ```
 
@@ -92,16 +98,21 @@ O agente deve acionar as ferramentas do servidor local `carpintaria-leo-madeiras
    - Fornecer `furniture_type`, quantidade de peças, portas, gavetas e metros lineares de fita calculados.
    - Retorna a lista detalhada de parafusos (4.0x40 para estrutura, 3.5x16 para ferragens), dobradiças 35mm com amortecedor, corrediças e suportes de fixação.
 
-3. **`search_materials`**:
+3. **`generate_assembly_manual`**:
+   - Gera o roteiro passo a passo estruturado por fases lógicas (conferência, pré-furação, pré-montagem, estrutura principal e regulagens).
+   - Fornece a lista categorizada de ferramentas essenciais, opcionais e EPIs de segurança.
+   - Atualiza o visualizador com o manual interativo integrado pronto para download em `.MD` e impressão/PDF.
+
+4. **`search_materials`**:
    - Consultar as chapas de MDF necessárias: `query="MDF Branco"`, `thickness="15mm"`.
    - Consultar as fitas de borda: `query="Fita de borda branca 22mm"`.
    - Consultar ferragens específicas caso o usuário prefira marcas ou modelos diferenciados.
 
-4. **`suggest_terms`**:
+5. **`suggest_terms`**:
    - Usar para encontrar nomes exatos de acabamentos e padrões madeirados quando a busca direta for ambígua.
 
-5. **`export_3d_project`**:
-   - Exporta o modelo 3D em arquivo JSON pronto para ser inspecionado no visualizador local `viewer/index.html`.
+6. **`preview_furniture_3d`**:
+   - Atualiza o projeto 3D ativo no visualizador local `viewer/index.html` e arquiva em `viewer/projects/`.
 
 ---
 
@@ -115,10 +126,11 @@ O agente deve acionar as ferramentas do servidor local `carpintaria-leo-madeiras
    - Taxa de aproveitamento da chapa (%) e retalhos úteis que sobraram.
 4. **Kit de Montagem e Ferragens ("Invisíveis")**:
    - Lista quantificada de parafusos, tapa-furos, cola e suportes.
-5. **Estimativa de Custos na Leo Madeiras**:
+5. **Ferramental Mínimo & EPIs**:
+   - Lista de ferramentas essenciais (furadeira, broca escareadora 3mm, esquadro, sargentos) e EPIs (máscara PFF2, óculos).
+6. **Estimativa de Custos na Leo Madeiras**:
    - Itens encontrados com links diretos (`https://www.leomadeiras.com.br/...`), preços unitários e valor total estimado.
-6. **Visualizador 3D com Visão Explodida**:
-   - Indicar o visualizador [viewer/index.html](file:///D:/Github/carpintaria-mcp/viewer/index.html) para explorar o modelo em 3D, girar, dar zoom e usar o controle deslizante de visão explodida.
-7. **Dicas Práticas de Montagem**:
-   - Uso de broca piloto de 3mm antes de parafusar de topo.
-   - Aplicação de fita de borda e refile com estilete/refilador.
+7. **Visualizador 3D com Visão Explodida & Manual de Montagem**:
+   - Indicar o visualizador [viewer/index.html](file:///D:/Github/carpintaria-mcp/viewer/index.html) para explorar em 3D, ver a visão explodida e abrir o **Manual de Montagem** (com download em `.md` ou impressão/PDF).
+8. **Roteiro Passo a Passo de Montagem**:
+   - Resumo das fases principais de montagem com dicas de esquadro e segurança.

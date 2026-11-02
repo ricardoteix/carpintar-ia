@@ -143,3 +143,126 @@ def recommend_hardware(
         "total_items_recommended": len(items),
         "hardware_kit": items,
     }
+
+def recommend_tools(
+    furniture_type: str,
+    doors: int = 0,
+    drawers: int = 0,
+    cuts_in_shop: bool = False,
+) -> Dict[str, Any]:
+    """Deduz o conjunto estruturado de ferramentas essenciais, opcionais e EPIs para montagem do móvel.
+
+    Args:
+        furniture_type: Tipo do móvel ('krat', 'armario', 'nicho', 'estante', etc.)
+        doors: Quantidade de portas (para dobradiças 35mm)
+        drawers: Quantidade de gavetas (para corrediças)
+        cuts_in_shop: Se o marceneiro fará os cortes e fitamento na própria oficina
+    """
+    f_type = furniture_type.lower()
+    is_wood_solid = "krat" in f_type or "madeira" in f_type or "pinus" in f_type
+
+    essential: List[Dict[str, str]] = [
+        {
+            "name": "Parafusadeira / Furadeira",
+            "spec": "Mandril de 3/8 pol com controle de torque (evita espanar MDF ou trincar madeira)",
+            "why": "Furação piloto rápida e parafusamento firme com torque regulado.",
+        },
+        {
+            "name": "Broca Piloto 3.0 mm com Escareador",
+            "spec": "Broca de aço rápido 3mm + escareador 45°",
+            "why": "A furação piloto evita que o MDF estufe ou o Pinus rache no topo; o escareador embutir a cabeça do parafuso.",
+        },
+        {
+            "name": "Bit Phillips PH2",
+            "spec": "Ponteira de impacto de 50mm ou 65mm com retenção magnética",
+            "why": "Encaixe preciso nos parafusos chipboard sem estragar a fenda.",
+        },
+        {
+            "name": "Trena Metálica e Lápis de Marceneiro",
+            "spec": "Trena de 3m a 5m com trava + lápis rígido (grau 2H ou carpinteiro)",
+            "why": "Medição de diagonais e marcação exata das linhas de furação.",
+        },
+        {
+            "name": "Esquadro Combinado Metálico",
+            "spec": "300mm com escala milimétrica e bolha de nível",
+            "why": "Garantir 90° perfeitos nos encontros de topos e marcações paralelas.",
+        },
+        {
+            "name": "Grampos Sargentos (2 a 4 unidades)",
+            "spec": "Grampos tipo F (abertura 300mm) ou grampos angulares 90°",
+            "why": "Seguram as peças firmemente unidas durante a furação e parafusamento, impedindo desalinhamento.",
+        },
+    ]
+
+    # Ferramenta para portas (se houver dobradiça caneco 35mm e não vier furado da loja)
+    if doors > 0:
+        essential.append({
+            "name": "Broca Forstner / Fresa Caneco 35 mm",
+            "spec": "Fresa Forstner 35mm com ponta de centro (ou gabarito de caneco)",
+            "why": "Usinagem da cavidade de 11.5mm de profundidade na face interna das portas para instalar as dobradiças.",
+        })
+
+    # Ferramenta para gavetas
+    if drawers > 0:
+        essential.append({
+            "name": "Nível de Mão e Régua Metálica",
+            "spec": "Nível bolha de 30cm a 40cm",
+            "why": "Garantir que os pares de corrediças fiquem 100% nivelados e paralelos em ambos os lados.",
+        })
+
+    optional: List[Dict[str, str]] = [
+        {
+            "name": "Bloco com Lixa Grão 150 / 220",
+            "spec": "Lixa para madeira ou esponja abrasiva média/fina",
+            "why": "Quebra suave de cantos vivos ('arrebitas') e remoção de marcas de lápis.",
+        },
+        {
+            "name": "Gabarito de Furação de Cavilhas / Minifix",
+            "spec": "Gabarito autocentrante para furos de 6mm e 8mm",
+            "why": "Permite conexões invisíveis sem parafusos aparentes nas laterais externas.",
+        },
+    ]
+
+    if cuts_in_shop:
+        optional.extend([
+            {
+                "name": "Serra Circular Manual com Trilho Guia",
+                "spec": "Disco para MDF com 60 dentes trapezoidais (dentes ED)",
+                "why": "Corte de chapas retas sem lascar o revestimento melamínico.",
+            },
+            {
+                "name": "Refilador de Fita de Borda e Estilete",
+                "spec": "Refilador duplo de facas intercambiáveis + estilete trapezoidal",
+                "why": "Corte do excesso de fita de borda rente à chapa sem riscar o MDF.",
+            },
+            {
+                "name": "Soprador Térmico ou Ferro de Passar",
+                "spec": "Controle de temperatura ~150°C a 200°C",
+                "why": "Aplicação de fita de borda pré-encolada ou amolecimento de cola de contato.",
+            },
+        ])
+
+    safety: List[Dict[str, str]] = [
+        {
+            "item": "Óculos de Proteção",
+            "reason": "Protege contra cavacos e farpas projetadas na furação e corte.",
+        },
+        {
+            "item": "Máscara de Proteção Respiratória (PFF2)",
+            "reason": "O pó fino de MDF contém resinas e formaldeído; use sempre ao furar ou lixar.",
+        },
+        {
+            "item": "Protetor Auricular (Plug ou Concha)",
+            "reason": "Proteção auditiva ao operar ferramentas elétricas (furadeiras, serras).",
+        },
+    ]
+
+    return {
+        "furniture_type": furniture_type,
+        "is_wood_solid": is_wood_solid,
+        "cuts_in_shop": cuts_in_shop,
+        "essential_tools": essential,
+        "optional_tools": optional,
+        "safety_equipment": safety,
+    }
+

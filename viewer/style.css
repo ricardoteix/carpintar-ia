@@ -261,3 +261,319 @@ hr {
   color: #94a3b8;
   z-index: 10;
 }
+
+/* --- Modal do Manual de Montagem --- */
+.manual-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.manual-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 12, 18, 0.85);
+  backdrop-filter: blur(6px);
+}
+
+.manual-modal-container {
+  position: relative;
+  background: #1e222d;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  z-index: 101;
+  overflow: hidden;
+}
+
+.manual-modal-header {
+  padding: 18px 24px;
+  background: #171a23;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.manual-modal-header h2 {
+  font-size: 1.25rem;
+  color: #fbbf24;
+  margin-bottom: 4px;
+}
+
+.manual-subtitle {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.manual-modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-manual-action {
+  background: #2d3748;
+  color: #f8fafc;
+  border: 1px solid #4a5568;
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.btn-manual-action:hover {
+  background: #38bdf8;
+  color: #0f172a;
+  border-color: #38bdf8;
+}
+
+.btn-close-modal {
+  background: transparent;
+  color: #94a3b8;
+  border: none;
+  font-size: 1.4rem;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.btn-close-modal:hover {
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.manual-modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  line-height: 1.6;
+}
+
+.manual-section-title {
+  font-size: 1.1rem;
+  color: #38bdf8;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+  padding-bottom: 6px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.tool-card {
+  background: #161922;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.tool-card.essential {
+  border-left: 3px solid #fbbf24;
+}
+
+.tool-card.optional {
+  border-left: 3px solid #94a3b8;
+}
+
+.tool-card.safety {
+  border-left: 3px solid #10b981;
+}
+
+.tool-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #f1f5f9;
+  margin-bottom: 3px;
+}
+
+.tool-spec {
+  font-size: 0.78rem;
+  color: #fbbf24;
+  margin-bottom: 4px;
+}
+
+.tool-why {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.phase-card {
+  background: #171a23;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+
+.phase-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.phase-number-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #fbbf24;
+}
+
+.phase-desc {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+
+.step-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: #e2e8f0;
+}
+
+.step-item input[type="checkbox"] {
+  margin-top: 4px;
+  cursor: pointer;
+  accent-color: #38bdf8;
+  width: 16px;
+  height: 16px;
+}
+
+.step-item.done span {
+  text-decoration: line-through;
+  color: #64748b;
+}
+
+.phase-tip {
+  margin-top: 12px;
+  background: rgba(251, 191, 36, 0.08);
+  border-left: 3px solid #fbbf24;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  color: #fef08a;
+}
+
+/* --- Impressão e PDF (@media print) --- */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    overflow: visible !important;
+    height: auto !important;
+  }
+
+  .toolbar,
+  #canvas-container,
+  .info-panel,
+  .viewport-hints,
+  .manual-modal-overlay,
+  .manual-modal-actions {
+    display: none !important;
+  }
+
+  .manual-modal {
+    position: static !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  .manual-modal-container {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: none !important;
+    box-shadow: none !important;
+    max-width: 100% !important;
+    max-height: none !important;
+  }
+
+  .manual-modal-header {
+    background: transparent !important;
+    border-bottom: 2px solid #000000 !important;
+    padding: 0 0 12px 0 !important;
+    margin-bottom: 18px !important;
+  }
+
+  .manual-modal-header h2 {
+    color: #000000 !important;
+    font-size: 1.5rem !important;
+  }
+
+  .manual-subtitle {
+    color: #333333 !important;
+  }
+
+  .manual-modal-body {
+    padding: 0 !important;
+    color: #000000 !important;
+  }
+
+  .manual-section-title {
+    color: #000000 !important;
+    border-bottom: 1px solid #666666 !important;
+    font-size: 1.2rem !important;
+    margin-top: 20px !important;
+  }
+
+  .tool-card,
+  .phase-card {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #cccccc !important;
+    page-break-inside: avoid !important;
+  }
+
+  .tool-name,
+  .phase-number-title {
+    color: #000000 !important;
+  }
+
+  .tool-spec {
+    color: #444444 !important;
+  }
+
+  .tool-why,
+  .phase-desc,
+  .step-item {
+    color: #222222 !important;
+  }
+
+  .phase-tip {
+    background: #f4f4f5 !important;
+    border-left: 3px solid #000000 !important;
+    color: #111111 !important;
+  }
+}

@@ -6,6 +6,7 @@ let scene, camera, renderer, controls;
 let currentMeshes = [];
 let raycaster, mouse;
 let selectedMesh = null;
+let currentActiveProject = null;
 let currentMaterialType = 'pinus';
 let autoRotate = false;
 
@@ -74,6 +75,134 @@ const PROJECTS = {
     "title": "Cadeira Krat (Gerrit Rietveld, 1934)",
     "dimensions": "590 x 630 x 686 mm",
     "description": "Design modernista autêntico de 1934 extraído do modelo técnico (krat-model.dae) e manual de montagem oficial: 18 peças de 20mm sem peças soltas ou flutuando.",
+        "tools": {
+        "furniture_type": "krat",
+        "is_wood_solid": true,
+        "cuts_in_shop": false,
+        "essential_tools": [
+                {
+                        "name": "Parafusadeira / Furadeira",
+                        "spec": "Mandril de 3/8 pol com controle de torque (evita espanar MDF ou trincar madeira)",
+                        "why": "Furação piloto rápida e parafusamento firme com torque regulado."
+                },
+                {
+                        "name": "Broca Piloto 3.0 mm com Escareador",
+                        "spec": "Broca de aço rápido 3mm + escareador 45°",
+                        "why": "A furação piloto evita que o MDF estufe ou o Pinus rache no topo; o escareador embutir a cabeça do parafuso."
+                },
+                {
+                        "name": "Bit Phillips PH2",
+                        "spec": "Ponteira de impacto de 50mm ou 65mm com retenção magnética",
+                        "why": "Encaixe preciso nos parafusos chipboard sem estragar a fenda."
+                },
+                {
+                        "name": "Trena Metálica e Lápis de Marceneiro",
+                        "spec": "Trena de 3m a 5m com trava + lápis rígido (grau 2H ou carpinteiro)",
+                        "why": "Medição de diagonais e marcação exata das linhas de furação."
+                },
+                {
+                        "name": "Esquadro Combinado Metálico",
+                        "spec": "300mm com escala milimétrica e bolha de nível",
+                        "why": "Garantir 90° perfeitos nos encontros de topos e marcações paralelas."
+                },
+                {
+                        "name": "Grampos Sargentos (2 a 4 unidades)",
+                        "spec": "Grampos tipo F (abertura 300mm) ou grampos angulares 90°",
+                        "why": "Seguram as peças firmemente unidas durante a furação e parafusamento, impedindo desalinhamento."
+                }
+        ],
+        "optional_tools": [
+                {
+                        "name": "Bloco com Lixa Grão 150 / 220",
+                        "spec": "Lixa para madeira ou esponja abrasiva média/fina",
+                        "why": "Quebra suave de cantos vivos ('arrebitas') e remoção de marcas de lápis."
+                },
+                {
+                        "name": "Gabarito de Furação de Cavilhas / Minifix",
+                        "spec": "Gabarito autocentrante para furos de 6mm e 8mm",
+                        "why": "Permite conexões invisíveis sem parafusos aparentes nas laterais externas."
+                }
+        ],
+        "safety_equipment": [
+                {
+                        "item": "Óculos de Proteção",
+                        "reason": "Protege contra cavacos e farpas projetadas na furação e corte."
+                },
+                {
+                        "item": "Máscara de Proteção Respiratória (PFF2)",
+                        "reason": "O pó fino de MDF contém resinas e formaldeído; use sempre ao furar ou lixar."
+                },
+                {
+                        "item": "Protetor Auricular (Plug ou Concha)",
+                        "reason": "Proteção auditiva ao operar ferramentas elétricas (furadeiras, serras)."
+                }
+        ]
+},
+        "assembly_guide": {
+        "estimated_time_hours": 3.0,
+        "difficulty": "Médio (Requer conferência de esquadro e pré-furações)",
+        "phases": [
+                {
+                        "phase_number": 1,
+                        "title": "Conferência e Pré-Furação dos 4 Módulos",
+                        "description": "Separe as 18 peças de Pinus 20mm nos seus respectivos grupos (2x Laterais, Assento e Encosto).",
+                        "steps": [
+                                "Identifique os 4 grupos: Grupo 0 (Lateral Esquerda), Grupo 1 (Lateral Direita), Grupo 2 (Assento) e Grupo 3 (Encosto).",
+                                "Marque todas as furações com esquadro e lápis. As tábuas de Pinus racham se parafusadas sem furo piloto.",
+                                "Execute furações piloto com broca 3.0mm e escareador 45° na profundidade exata da cabeça do parafuso.",
+                                "Lixe suavemente as arestas com lixa grão 180 para quebrar cantos vivos e eliminar farpas."
+                        ],
+                        "tips": "Utilize um sargento para segurar peças sobrepostas antes de furar, garantindo alinhamento perfeito."
+                },
+                {
+                        "phase_number": 2,
+                        "title": "Montagem das Laterais Esquerda e Direita (Módulos 0 e 1)",
+                        "description": "Monte os dois quadros laterais tipo caixote com montantes dianteiro/traseiro, travessa larga e apoio de braço.",
+                        "steps": [
+                                "Una o Pé Frontal (20x140x450mm) e o Pé Traseiro (20x140x450mm) à Travessa Larga (20x140x600mm) formando o sanduíche lateral.",
+                                "Fixe com 2 a 3 parafusos 4.0x40mm em cada encontro, conferindo 90° com esquadro metálico.",
+                                "Posicione o Apoio de Braço plano (20x70x600mm) deitado sobre o topo dos pés (Y=450 a 470mm) e parafuse de cima para baixo escareando bem.",
+                                "Repita a montagem para a Lateral Direita de forma perfeitamente espelhada."
+                        ],
+                        "tips": "Coloque as duas laterais lado a lado no chão plano para garantir que os pés tocam o solo no mesmo nível."
+                },
+                {
+                        "phase_number": 3,
+                        "title": "Montagem do Módulo do Assento (Módulo 2)",
+                        "description": "Construção do estrado do assento composto por 2 travessas inferiores de 490mm e 3 tábuas superiores.",
+                        "steps": [
+                                "Posicione as 2 Travessas de Suporte (20x70x490mm) paralelas a 380mm de distância uma da outra.",
+                                "Acomode as 3 Tábuas do Assento (20x140x450mm) apoiadas perpendicularmente sobre as travessas.",
+                                "Ajuste os vãos laterais uniformes de 35mm entre as tábuas (use um espaçador de madeira de 35mm como gabarito).",
+                                "Parafuse as tábuas nas travessas de suporte com parafusos 4.0x40mm de baixo para cima ou por cima escareado."
+                        ],
+                        "tips": "O módulo do assento formará uma grelha rígida de 490mm de largura que se encaixará justo entre as laterais."
+                },
+                {
+                        "phase_number": 4,
+                        "title": "Montagem do Módulo do Encosto (Módulo 3)",
+                        "description": "Construção do painel traseiro inclinado com 3 tábuas verticais travadas por 2 travessas traseiras.",
+                        "steps": [
+                                "Alinhe as 3 Tábuas Verticais (20x140x445mm) no piso com espaçamento uniforme de 15mm entre si.",
+                                "Posicione a Travessa Traseira Superior (20x70x450mm) no topo e a Travessa Traseira Inferior (20x70x450mm) na base.",
+                                "Parafuse as travessas por trás das tábuas verticais para manter a face frontal limpa e lisa para o encosto das costas."
+                        ],
+                        "tips": "Certifique-se de que a largura total deste módulo seja 450mm, correspondente ao vão livre interno das laterais."
+                },
+                {
+                        "phase_number": 5,
+                        "title": "União Estrutural e Acabamento",
+                        "description": "Junção dos 4 módulos principais no ângulo correto de inclinação Rietveld.",
+                        "steps": [
+                                "Posicione as duas laterais verticais apoiadas no chão com espaçamento de 490mm.",
+                                "Encaixe o módulo do assento com inclinação ergonômica de ~12.8° e parafuse as travessas de 490mm nas faces internas das laterais.",
+                                "Encaixe o módulo do encosto com inclinação de ~24.6° apoiando a base sobre as travessas do assento e parafuse firmemente.",
+                                "Aplique tapa-furos ou massa para madeira nos parafusos aparentes e finalize com óleo mineral, seladora ou verniz fosco."
+                        ],
+                        "tips": "Teste a estabilidade da cadeira sobre uma superfície plana e aplique feltros adesivos na base dos pés para proteger o piso."
+                }
+        ]
+},
     "pieces": [
         {
             "id": "group_0_braco",
@@ -911,6 +1040,7 @@ function init() {
 function loadProject(projectKey) {
   const project = PROJECTS[projectKey];
   if (!project) return;
+  currentActiveProject = project;
 
   // Limpa malhas anteriores
   currentMeshes.forEach(mesh => scene.remove(mesh));
@@ -1034,8 +1164,190 @@ function onPointerClick(event) {
   }
 }
 
+
+// --- Gerenciamento do Manual de Montagem e Guia de Ferramentas ---
+function openManualModal() {
+  if (!currentActiveProject) return;
+  const project = currentActiveProject;
+  
+  document.getElementById('manualTitle').innerText = `📖 Manual de Montagem: ${project.title}`;
+  const g = project.assembly_guide || {};
+  document.getElementById('manualSubtitle').innerText = `${project.dimensions} | Dificuldade: ${g.difficulty || 'Média'} | Tempo Estimado: ~${g.estimated_time_hours || 2}h`;
+  
+  renderManualContent(project);
+  document.getElementById('manualModal').style.display = 'flex';
+}
+
+function closeManualModal() {
+  document.getElementById('manualModal').style.display = 'none';
+}
+
+function renderManualContent(project) {
+  const container = document.getElementById('manualContent');
+  const tools = project.tools || {};
+  const guide = project.assembly_guide || {};
+  
+  let html = '';
+  
+  // 1. Ferramental e Segurança
+  html += `
+    <section class="manual-section">
+      <h3 class="manual-section-title">🧰 1. Ferramental Necessário e Segurança</h3>
+      <div class="tools-grid">
+  `;
+  
+  (tools.essential_tools || []).forEach(t => {
+    html += `
+      <div class="tool-card essential">
+        <div class="tool-name">${t.name}</div>
+        <div class="tool-spec">⚠️ ${t.spec}</div>
+        <div class="tool-why">${t.why}</div>
+      </div>
+    `;
+  });
+
+  (tools.optional_tools || []).forEach(t => {
+    html += `
+      <div class="tool-card optional">
+        <div class="tool-name">${t.name}</div>
+        <div class="tool-spec">💡 ${t.spec}</div>
+        <div class="tool-why">${t.why}</div>
+      </div>
+    `;
+  });
+
+  (tools.safety_equipment || []).forEach(s => {
+    html += `
+      <div class="tool-card safety">
+        <div class="tool-name">🛡️ ${s.item}</div>
+        <div class="tool-why">${s.reason}</div>
+      </div>
+    `;
+  });
+  
+  html += `
+      </div>
+    </section>
+  `;
+
+  // 2. Fases de Montagem
+  html += `
+    <section class="manual-section">
+      <h3 class="manual-section-title">📋 2. Roteiro Passo a Passo de Montagem</h3>
+  `;
+
+  (guide.phases || []).forEach(phase => {
+    html += `
+      <div class="phase-card">
+        <div class="phase-header">
+          <div class="phase-number-title">Fase ${phase.phase_number}: ${phase.title}</div>
+        </div>
+        ${phase.description ? `<div class="phase-desc">${phase.description}</div>` : ''}
+        <ul class="step-list">
+    `;
+
+    (phase.steps || []).forEach((step, idx) => {
+      const stepId = `step_${phase.phase_number}_${idx}`;
+      html += `
+        <li class="step-item">
+          <input type="checkbox" id="${stepId}" onchange="this.parentElement.classList.toggle('done', this.checked)">
+          <label for="${stepId}"><span>${step}</span></label>
+        </li>
+      `;
+    });
+
+    html += `
+        </ul>
+        ${phase.tips ? `<div class="phase-tip">💡 <strong>Dica de Marceneiro:</strong> ${phase.tips}</div>` : ''}
+      </div>
+    `;
+  });
+
+  html += `</section>`;
+  container.innerHTML = html;
+}
+
+function downloadManualMarkdown() {
+  if (!currentActiveProject) return;
+  const project = currentActiveProject;
+  const tools = project.tools || {};
+  const guide = project.assembly_guide || {};
+
+  const lines = [];
+  lines.push(`# Manual de Montagem: ${project.title}`);
+  lines.push(`**Dimensões:** ${project.dimensions} | **Dificuldade:** ${guide.difficulty || 'Média'} | **Tempo Estimado:** ${guide.estimated_time_hours || 2}h\n`);
+  
+  lines.push('## 1. Ferramentas Necessárias');
+  lines.push('### 🧰 Essenciais:');
+  (tools.essential_tools || []).forEach(t => {
+    lines.push(`- **${t.name}** (${t.spec}): ${t.why}`);
+  });
+
+  if (tools.optional_tools && tools.optional_tools.length > 0) {
+    lines.push('\n### ⚙️ Opcionais / Recomendadas:');
+    tools.optional_tools.forEach(t => {
+      lines.push(`- **${t.name}** (${t.spec}): ${t.why}`);
+    });
+  }
+
+  if (tools.safety_equipment && tools.safety_equipment.length > 0) {
+    lines.push('\n### 🛡️ Equipamentos de Proteção (EPIs):');
+    tools.safety_equipment.forEach(s => {
+      lines.push(`- **${s.item}**: ${s.reason}`);
+    });
+  }
+
+  lines.push('\n## 2. Roteiro Passo a Passo de Montagem');
+  (guide.phases || []).forEach(p => {
+    lines.push(`\n### Fase ${p.phase_number}: ${p.title}`);
+    if (p.description) lines.push(`*${p.description}*\n`);
+    (p.steps || []).forEach(s => {
+      lines.push(`- [ ] ${s}`);
+    });
+    if (p.tips) lines.push(`> 💡 **Dica de Marceneiro:** ${p.tips}`);
+  });
+
+  const mdContent = lines.join('\n');
+  const blob = new Blob([mdContent], { type: 'text/markdown;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  const filename = (project.title || 'manual_montagem').toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '');
+  a.download = `manual_montagem_${filename}.md`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
 // --- Controles de UI ---
 function setupUI() {
+  // Controles do Modal do Manual de Montagem
+  const btnOpenManual = document.getElementById('btnOpenManual');
+  if (btnOpenManual) {
+    btnOpenManual.addEventListener('click', openManualModal);
+  }
+
+  const btnCloseManual = document.getElementById('btnCloseManual');
+  if (btnCloseManual) {
+    btnCloseManual.addEventListener('click', closeManualModal);
+  }
+
+  const manualOverlay = document.getElementById('manualOverlay');
+  if (manualOverlay) {
+    manualOverlay.addEventListener('click', closeManualModal);
+  }
+
+  const btnDownloadMd = document.getElementById('btnDownloadMd');
+  if (btnDownloadMd) {
+    btnDownloadMd.addEventListener('click', downloadManualMarkdown);
+  }
+
+  const btnPrintPdf = document.getElementById('btnPrintPdf');
+  if (btnPrintPdf) {
+    btnPrintPdf.addEventListener('click', () => window.print());
+  }
+
   document.getElementById('projectSelect').addEventListener('change', (e) => {
     loadProject(e.target.value);
   });

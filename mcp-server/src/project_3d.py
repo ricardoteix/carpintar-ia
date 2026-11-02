@@ -1,3 +1,11 @@
+try:
+    from .rules import recommend_tools
+except ImportError:
+    try:
+        from src.rules import recommend_tools
+    except ImportError:
+        from rules import recommend_tools
+
 """Gerador de dados 3D, cálculos paramétricos de móveis e exportador para o visualizador."""
 
 from typing import Any, Dict, List, Optional
@@ -242,6 +250,8 @@ def generate_krat_chair_3d() -> Dict[str, Any]:
         "dimensions": "590 x 630 x 686 mm",
         "description": "Design clássico modernista de 1934 em 4 módulos construtivos (18 peças de 20mm), sem peças soltas ou flutuando.",
         "pieces": pieces,
+        "tools": recommend_tools("krat", doors=0, drawers=0),
+        "assembly_guide": build_assembly_guide("krat", width=590, height=630, depth=686, thickness=20),
     }
 
 
@@ -356,6 +366,8 @@ def generate_cabinet_3d(
         "dimensions": f"{width:.0f} x {height:.0f} x {depth:.0f} mm",
         "description": f"Armário em MDF {thickness:.0f}mm com {doors} porta(s) e {shelves} prateleira(s).",
         "pieces": pieces,
+        "tools": recommend_tools("armario", doors=doors, drawers=drawers),
+        "assembly_guide": build_assembly_guide("armario", width=width, height=height, depth=depth, thickness=thickness, doors=doors, shelves=shelves, drawers=drawers),
     }
 
 
@@ -423,6 +435,8 @@ def generate_niche_3d(
         "dimensions": f"{width:.0f} x {height:.0f} x {depth:.0f} mm",
         "description": f"Nicho em MDF {thickness:.0f}mm.",
         "pieces": pieces,
+        "tools": recommend_tools("nicho", doors=0, drawers=0),
+        "assembly_guide": build_assembly_guide("nicho", width=width, height=height, depth=depth, thickness=thickness),
     }
 
 
@@ -501,6 +515,8 @@ def generate_bookshelf_3d(
         "dimensions": f"{width:.0f} x {height:.0f} x {depth:.0f} mm",
         "description": f"Estante robusta em MDF {thickness:.0f}mm com {shelves_count} prateleiras.",
         "pieces": pieces,
+        "tools": recommend_tools("estante", doors=0, drawers=0),
+        "assembly_guide": build_assembly_guide("estante", width=width, height=height, depth=depth, thickness=thickness, shelves=shelves_count),
     }
 
 
@@ -562,3 +578,233 @@ def export_project_to_file(project_data: Dict[str, Any], filename: str = "projec
         json.dump(project_data, f, indent=2, ensure_ascii=False)
     return out_file
 
+
+
+def build_assembly_guide(
+    furniture_type: str,
+    width: float = 800.0,
+    height: float = 600.0,
+    depth: float = 350.0,
+    thickness: float = 15.0,
+    doors: int = 0,
+    shelves: int = 0,
+    drawers: int = 0
+) -> Dict[str, Any]:
+    """Constrói o roteiro sequencial estruturado de montagem profissional para o móvel."""
+    f_type = furniture_type.lower()
+    
+    if "krat" in f_type or "cadeira" in f_type:
+        return {
+            "estimated_time_hours": 3.0,
+            "difficulty": "Médio (Requer conferência de esquadro e pré-furações)",
+            "phases": [
+                {
+                    "phase_number": 1,
+                    "title": "Conferência e Pré-Furação dos 4 Módulos",
+                    "description": "Separe as 18 peças de Pinus 20mm nos seus respectivos grupos (2x Laterais, Assento e Encosto).",
+                    "steps": [
+                        "Identifique os 4 grupos: Grupo 0 (Lateral Esquerda), Grupo 1 (Lateral Direita), Grupo 2 (Assento) e Grupo 3 (Encosto).",
+                        "Marque todas as furações com esquadro e lápis. As tábuas de Pinus racham se parafusadas sem furo piloto.",
+                        "Execute furações piloto com broca 3.0mm e escareador 45° na profundidade exata da cabeça do parafuso.",
+                        "Lixe suavemente as arestas com lixa grão 180 para quebrar cantos vivos e eliminar farpas."
+                    ],
+                    "tips": "Utilize um sargento para segurar peças sobrepostas antes de furar, garantindo alinhamento perfeito."
+                },
+                {
+                    "phase_number": 2,
+                    "title": "Montagem das Laterais Esquerda e Direita (Módulos 0 e 1)",
+                    "description": "Monte os dois quadros laterais tipo caixote com montantes dianteiro/traseiro, travessa larga e apoio de braço.",
+                    "steps": [
+                        "Una o Pé Frontal (20x140x450mm) e o Pé Traseiro (20x140x450mm) à Travessa Larga (20x140x600mm) formando o sanduíche lateral.",
+                        "Fixe com 2 a 3 parafusos 4.0x40mm em cada encontro, conferindo 90° com esquadro metálico.",
+                        "Posicione o Apoio de Braço plano (20x70x600mm) deitado sobre o topo dos pés (Y=450 a 470mm) e parafuse de cima para baixo escareando bem.",
+                        "Repita a montagem para a Lateral Direita de forma perfeitamente espelhada."
+                    ],
+                    "tips": "Coloque as duas laterais lado a lado no chão plano para garantir que os pés tocam o solo no mesmo nível."
+                },
+                {
+                    "phase_number": 3,
+                    "title": "Montagem do Módulo do Assento (Módulo 2)",
+                    "description": "Construção do estrado do assento composto por 2 travessas inferiores de 490mm e 3 tábuas superiores.",
+                    "steps": [
+                        "Posicione as 2 Travessas de Suporte (20x70x490mm) paralelas a 380mm de distância uma da outra.",
+                        "Acomode as 3 Tábuas do Assento (20x140x450mm) apoiadas perpendicularmente sobre as travessas.",
+                        "Ajuste os vãos laterais uniformes de 35mm entre as tábuas (use um espaçador de madeira de 35mm como gabarito).",
+                        "Parafuse as tábuas nas travessas de suporte com parafusos 4.0x40mm de baixo para cima ou por cima escareado."
+                    ],
+                    "tips": "O módulo do assento formará uma grelha rígida de 490mm de largura que se encaixará justo entre as laterais."
+                },
+                {
+                    "phase_number": 4,
+                    "title": "Montagem do Módulo do Encosto (Módulo 3)",
+                    "description": "Construção do painel traseiro inclinado com 3 tábuas verticais travadas por 2 travessas traseiras.",
+                    "steps": [
+                        "Alinhe as 3 Tábuas Verticais (20x140x445mm) no piso com espaçamento uniforme de 15mm entre si.",
+                        "Posicione a Travessa Traseira Superior (20x70x450mm) no topo e a Travessa Traseira Inferior (20x70x450mm) na base.",
+                        "Parafuse as travessas por trás das tábuas verticais para manter a face frontal limpa e lisa para o encosto das costas."
+                    ],
+                    "tips": "Certifique-se de que a largura total deste módulo seja 450mm, correspondente ao vão livre interno das laterais."
+                },
+                {
+                    "phase_number": 5,
+                    "title": "União Estrutural e Acabamento",
+                    "description": "Junção dos 4 módulos principais no ângulo correto de inclinação Rietveld.",
+                    "steps": [
+                        "Posicione as duas laterais verticais apoiadas no chão com espaçamento de 490mm.",
+                        "Encaixe o módulo do assento com inclinação ergonômica de ~12.8° e parafuse as travessas de 490mm nas faces internas das laterais.",
+                        "Encaixe o módulo do encosto com inclinação de ~24.6° apoiando a base sobre as travessas do assento e parafuse firmemente.",
+                        "Aplique tapa-furos ou massa para madeira nos parafusos aparentes e finalize com óleo mineral, seladora ou verniz fosco."
+                    ],
+                    "tips": "Teste a estabilidade da cadeira sobre uma superfície plana e aplique feltros adesivos na base dos pés para proteger o piso."
+                }
+            ]
+        }
+    
+    elif "nicho" in f_type:
+        return {
+            "estimated_time_hours": 1.5,
+            "difficulty": "Fácil (Excelente projeto para iniciantes)",
+            "phases": [
+                {
+                    "phase_number": 1,
+                    "title": "Conferência e Fita de Borda",
+                    "description": "Preparação das 4 peças da caixaria e do fundo.",
+                    "steps": [
+                        "Identifique: 2 Laterais, 1 Base, 1 Tampo e 1 Fundo (MDF 6mm).",
+                        "Aplique fita de borda nas arestas frontais visíveis com cola de contato ou fita termocolante.",
+                        "Refile o excesso de fita com estilete ou refilador duplo e quebre a quina com lixa 220."
+                    ],
+                    "tips": "Cuidado para não aprofundar o estilete no MDF durante o refile."
+                },
+                {
+                    "phase_number": 2,
+                    "title": "Pré-Furação e Montagem da Caixaria",
+                    "description": "União das peças estruturais com esquadro de 90°.",
+                    "steps": [
+                        "Marque 2 furos por junção nas faces das peças externas (recuo de 35mm da frente e do fundo).",
+                        "Execute furo piloto de 3mm com escareador na espessura de 15mm.",
+                        "Prenda a Lateral à Base com grampo angular 90° e aperte os parafusos 4.0x40mm com torque moderado.",
+                        "Repita a operação para a outra lateral e finalize com o tampo superior."
+                    ],
+                    "tips": "Nunca aperte parafusos de topo em MDF sem pré-furação para não abrir a chapa."
+                },
+                {
+                    "phase_number": 3,
+                    "title": "Esquadro e Travamento com o Fundo",
+                    "description": "Garantia de estabilidade e geometria perfeita do nicho.",
+                    "steps": [
+                        "Meça as duas diagonais do nicho com a trena. Elas devem ter rigorosamente o mesmo comprimento milimétrico.",
+                        "Posicione o fundo de 6mm no rebaixo traseiro e parafuse a cada 15cm com parafusos 3.0x20mm.",
+                        "O fundo parafusado travará o esquadro definitivamente, impedindo o nicho de deformar."
+                    ],
+                    "tips": "Se uma diagonal estiver maior, empurre suavemente o canto oposto antes de parafusar o fundo."
+                },
+                {
+                    "phase_number": 4,
+                    "title": "Fixação na Parede",
+                    "description": "Instalação suspensa segura.",
+                    "steps": [
+                        "Fixe 2 suportes cantoneira com capa plástica nos cantos superiores internos do nicho.",
+                        "Nivele o nicho na parede com nível de bolha e marque os furos com lápis.",
+                        "Fure a alvenaria com broca de vídea 8mm, insira as buchas e fixe o móvel com parafusos 5.0x50mm."
+                    ],
+                    "tips": "Utilize as capas plásticas na cor do MDF para esconder completamente as ferragens de sustentação."
+                }
+            ]
+        }
+
+    elif "estante" in f_type or "livro" in f_type:
+        return {
+            "estimated_time_hours": 3.5,
+            "difficulty": "Médio (Atenção ao alinhamento de prateleiras)",
+            "phases": [
+                {
+                    "phase_number": 1,
+                    "title": "Gabarito e Marcação das Prateleiras",
+                    "description": "Alinhamento das alturas para garantir prateleiras 100% niveladas.",
+                    "steps": [
+                        "Coloque as duas laterais lado a lado no chão com a face interna voltada para cima.",
+                        "Utilize esquadro metálico e trena para traçar a linha de centro de cada prateleira em ambas as laterais simultaneamente.",
+                        "Marque 2 pontos de furação em cada linha de prateleira (recuos de 50mm de cada borda).",
+                        "Faça furações passantes de 3mm escareadas pela face externa das laterais."
+                    ],
+                    "tips": "Marcar as duas laterais juntas garante que as prateleiras não fiquem tortas."
+                },
+                {
+                    "phase_number": 2,
+                    "title": "Montagem da Base, Rodapé e Prateleiras",
+                    "description": "Fixação progressiva de baixo para cima.",
+                    "steps": [
+                        "Fixe o rodapé frontal recuado 15mm da frente da base inferior.",
+                        "Fixe a base inferior nas laterais com parafusos 4.0x40mm.",
+                        "Fixe as prateleiras intermediárias uma a uma, apoiando-as com auxílio de grampos sargentos.",
+                        "Finalize com a instalação do tampo superior."
+                    ],
+                    "tips": "Apoie a estante deitada de lado sobre uma bancada ou tapete para não riscar a pintura."
+                },
+                {
+                    "phase_number": 3,
+                    "title": "Fixação do Fundo e Travamento Anti-Tombamento",
+                    "description": "Segurança e rigidez estrutural.",
+                    "steps": [
+                        "Confira a igualdade das diagonais da estante.",
+                        "Pregue ou parafuse o fundo de 6mm em todo o perímetro e também nas prateleiras centrais.",
+                        "Instale um suporte de travamento de segurança tipo L no topo da estante ancorado na parede contra tombamento acidental."
+                    ],
+                    "tips": "Móveis com altura superior a 1,20m devem sempre ter fixação anti-tombamento na parede."
+                }
+            ]
+        }
+
+    else: # Armário padrão
+        return {
+            "estimated_time_hours": 4.0,
+            "difficulty": "Médio-Avançado (Envolve dobradiças e portas)",
+            "phases": [
+                {
+                    "phase_number": 1,
+                    "title": "Fita de Borda e Preparação dos Calços",
+                    "description": "Aplicação de fita nas arestas visíveis e furações das ferragens.",
+                    "steps": [
+                        "Aplique fita de borda nas frentes de todas as peças e em todos os 4 lados das portas.",
+                        "Se as portas não vierem furadas de fábrica, use a broca caneco de 35mm para fazer as cavidades de 11.5mm com centro a 22mm da borda.",
+                        "Parafuse os calços das dobradiças nas marcas das laterais com parafusos 3.5x16mm."
+                    ],
+                    "tips": "Não ultrapasse 11.5mm de profundidade no furo do caneco para não atravessar a face da porta."
+                },
+                {
+                    "phase_number": 2,
+                    "title": "Montagem da Caixaria Principal",
+                    "description": "União estrutural de base, laterais e tampo.",
+                    "steps": [
+                        "Una a Lateral Esquerda à Base com grampos 90° e parafuse com parafusos 4.0x40mm escareados.",
+                        "Instale a Lateral Direita e em seguida o Tampo Superior.",
+                        "Instale a prateleira intermediária caso o armário possua divisória interna."
+                    ],
+                    "tips": "Use torque baixo na parafusadeira para dar o aperto final manualmente com chave de fenda."
+                },
+                {
+                    "phase_number": 3,
+                    "title": "Esquadro e Fundo Traseiro",
+                    "description": "Travamento da estrutura antes da instalação das portas.",
+                    "steps": [
+                        "Meça as diagonais com a trena e ajuste até ficarem rigorosamente iguais.",
+                        "Fixe o fundo de 6mm com parafusos 3.0x20mm a cada 15cm por todo o contorno.",
+                        "Instale as cantoneiras reforçadas de fixação na parede nos cantos superiores internos."
+                    ],
+                    "tips": "Um armário fora de esquadro impedirá que as portas fiquem alinhadas."
+                },
+                {
+                    "phase_number": 4,
+                    "title": "Instalação e Regulagem das Portas",
+                    "description": "Encaixe das dobradiças e alinhamento milimétrico das frestas.",
+                    "steps": [
+                        "Fixe as dobradiças caneco nas portas com parafusos 3.5x16mm.",
+                        "Encaixe o braço da dobradiça no calço da lateral (sistema click ou parafuso de fixação).",
+                        "Regule os 3 parafusos da dobradiça: profundidade (afastamento da caixa), altura (nível) e lateral (fresta central entre as portas).",
+                        "Cole os batentes de silicone anti-impacto no canto oposto às dobradiças."
+                    ],
+                    "tips": "A fresta central recomendada entre duas portas de giro é de 3mm a 4mm."
+                }
+            ]
+        }
