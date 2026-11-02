@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcenaria 3D - Visualizador e Visão Explodida</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.164.1/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.164.1/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <!-- Barra de Ferramentas Superior -->
+  <header class="toolbar">
+    <div class="logo">
+      <span class="logo-icon">🪚</span>
+      <span class="logo-text">Marcenaria 3D</span>
+    </div>
+
+    <div class="control-group">
+      <label for="projectSelect">Projeto:</label>
+      <select id="projectSelect">
+        <option value="krat">Cadeira Krat (Gerrit Rietveld, 1934)</option>
+        <option value="armario">Armário Aéreo (800x600x350mm)</option>
+        <option value="nicho">Nicho de Parede (600x400x200mm)</option>
+      </select>
+    </div>
+
+    <div class="control-group">
+      <label for="materialSelect">Material:</label>
+      <select id="materialSelect">
+        <option value="pinus">Pinus Natural</option>
+        <option value="mdf_branco">MDF Branco Texturizado</option>
+        <option value="madeirado">MDF Freijó / Carvalho</option>
+      </select>
+    </div>
+
+    <div class="control-group slider-group">
+      <label for="explodeSlider">Visão Explodida: <span id="explodeValue">0%</span></label>
+      <input type="range" id="explodeSlider" min="0" max="100" value="0" step="1">
+    </div>
+
+    <div class="actions">
+      <button id="btnReloadProject" title="Recarregar Projeto Atual do Chat" style="border-color: #fbbf24; color: #fbbf24;">⚡ Atualizar do Chat</button>
+      <button id="btnResetView" title="Vista Isométrica / 3D">👁️ 3D</button>
+      <button id="btnViewFront" title="Vista Frontal">📐 Frontal</button>
+      <button id="btnViewSide" title="Vista Lateral">📐 Lateral</button>
+      <button id="btnViewTop" title="Vista Superior">📐 Superior</button>
+      <button id="btnAutoRotate" title="Girar Automaticamente">🔄 Auto-Giro</button>
+      <label class="btn-file" title="Importar arquivo JSON de projeto">
+        📂 Carregar JSON
+        <input type="file" id="fileInput" accept=".json" style="display: none;">
+      </label>
+    </div>
+  </header>
+
+  <!-- Canvas 3D -->
+  <div id="canvas-container"></div>
+
+  <!-- Painel Lateral de Informações da Peça -->
+  <aside class="info-panel" id="infoPanel">
+    <div class="panel-header">
+      <h3 id="panelProjectTitle">Cadeira Krat</h3>
+      <span class="badge" id="panelPieceCount">18 Peças</span>
+    </div>
+
+    <div class="project-summary" id="projectSummary">
+      <p><strong>Dimensões:</strong> <span id="summaryDimensions">590 x 630 x 686 mm</span></p>
+      <p id="summaryDesc">Design clássico modernista (Gerrit Rietveld, 1934) em 4 módulos construtivos com 18 peças de 20mm.</p>
+    </div>
+
+    <hr>
+
+    <div class="selected-piece-card" id="selectedPieceCard">
+      <h4>🔍 Peça Selecionada</h4>
+      <div id="pieceDetails">
+        <p class="placeholder-text">Clique ou passe o cursor sobre qualquer peça no modelo 3D para inspecionar medidas.</p>
+      </div>
+    </div>
+
+    <div class="parts-list-container">
+      <h4>📋 Lista de Peças (BOM)</h4>
+      <ul id="partsList" class="parts-list"></ul>
+    </div>
+  </aside>
+
+  <!-- Dica de Navegação -->
+  <footer class="viewport-hints">
+    <span>🖱️ <strong>Girar:</strong> Botão Esquerdo</span>
+    <span>🔍 <strong>Zoom:</strong> Scroll do Mouse</span>
+    <span>↔️ <strong>Mover:</strong> Botão Direito</span>
+  </footer>
+
+  <script src="current_project.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,674 @@
+// Gerado automaticamente pelo assistente de marcenaria
+window.CURRENT_PROJECT = {
+  "title": "Cadeira Krat (Gerrit Rietveld, 1934)",
+  "dimensions": "590 x 630 x 686 mm",
+  "description": "Design clássico modernista de 1934 em 4 módulos construtivos (18 peças de 20mm), sem peças soltas ou flutuando.",
+  "pieces": [
+    {
+      "id": "group_0_braco",
+      "name": "Lateral Esquerda - Apoio de Braço",
+      "group": "group_0",
+      "groupLabel": "Lateral Esquerda",
+      "size": [
+        20.0,
+        70.0,
+        600.0
+      ],
+      "pos": [
+        -260.0,
+        460.0,
+        0.0
+      ],
+      "rot": [
+        -3.14159,
+        -0.0,
+        -1.5708
+      ],
+      "quaternion": [
+        0.70711,
+        0.70711,
+        -0.0,
+        -0.0
+      ],
+      "dir": [
+        -1.6,
+        0.0,
+        0.0
+      ],
+      "dims": [
+        20.0,
+        70.0,
+        600.0
+      ]
+    },
+    {
+      "id": "group_0_travessa",
+      "name": "Lateral Esquerda - Travessa Larga",
+      "group": "group_0",
+      "groupLabel": "Lateral Esquerda",
+      "size": [
+        20.0,
+        140.0,
+        600.0
+      ],
+      "pos": [
+        -255.0,
+        225.0,
+        0.0
+      ],
+      "rot": [
+        3.14159,
+        -0.0,
+        -0.0
+      ],
+      "quaternion": [
+        1.0,
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "dir": [
+        -1.6,
+        0.0,
+        0.0
+      ],
+      "dims": [
+        20.0,
+        140.0,
+        600.0
+      ]
+    },
+    {
+      "id": "group_0_pe_frontal",
+      "name": "Lateral Esquerda - Pé Frontal",
+      "group": "group_0",
+      "groupLabel": "Lateral Esquerda",
+      "size": [
+        20.0,
+        140.0,
+        450.0
+      ],
+      "pos": [
+        -275.0,
+        225.0,
+        230.0
+      ],
+      "rot": [
+        1.5708,
+        0.0,
+        -0.0
+      ],
+      "quaternion": [
+        0.70711,
+        0.0,
+        -0.0,
+        0.70711
+      ],
+      "dir": [
+        -1.6,
+        0.0,
+        0.0
+      ],
+      "dims": [
+        20.0,
+        140.0,
+        450.0
+      ]
+    },
+    {
+      "id": "group_0_pe_traseiro",
+      "name": "Lateral Esquerda - Pé Traseiro",
+      "group": "group_0",
+      "groupLabel": "Lateral Esquerda",
+      "size": [
+        20.0,
+        140.0,
+        450.0
+      ],
+      "pos": [
+        -235.0,
+        225.0,
+        -230.0
+      ],
+      "rot": [
+        1.5708,
+        0.0,
+        -0.0
+      ],
+      "quaternion": [
+        0.70711,
+        0.0,
+        -0.0,
+        0.70711
+      ],
+      "dir": [
+        -1.6,
+        0.0,
+        0.0
+      ],
+      "dims": [
+        20.0,
+        140.0,
+        450.0
+      ]
+    },
+    {
+      "id": "group_1_braco",
+      "name": "Lateral Direita - Apoio de Braço",
+      "group": "group_1",
+      "groupLabel": "Lateral Direita",
+      "size": [
+        20.0,
+        70.0,
+        600.0
+      ],
+      "pos": [
+        260.0,
+        460.0,
+        0.0
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        1.5708
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        0.70711,
+        0.70711
+      ],
+      "dir": [
+        1.6,
+        0.0,
+        0.0
+      ],
+      "dims": [
+        20.0,
+        70.0,
+        600.0
+      ]
+    },
+    {
+      "id": "group_1_travessa",
+      "name": "Lateral Direita - Travessa Larga",
+      "group": "group_1",
+      "groupLabel": "Lateral Direita",
+      "size": [
+        20.0,
+        140.0,
+        600.0
+      ],
+      "pos": [
+        255.0,
+        225.0,
+        0.0
+      ],
+      "rot": [
+        -0.0,
+        0.0,
+        -3.14159
+      ],
+      "quaternion": [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "dir": [
+        1.6,
+        0.0,
+        0.0
+      ],
+      "dims": [
+        20.0,
+        140.0,
+        600.0
+      ]
+    },
+    {
+      "id": "group_1_pe_frontal",
+      "name": "Lateral Direita - Pé Frontal",
+      "group": "group_1",
+      "groupLabel": "Lateral Direita",
+      "size": [
+        20.0,
+        140.0,
+        450.0
+      ],
+      "pos": [
+        275.0,
+        225.0,
+        230.0
+      ],
+      "rot": [
+        1.5708,
+        -0.0,
+        -3.14159
+      ],
+      "quaternion": [
+        -0.0,
+        -0.70711,
+        0.70711,
+        0.0
+      ],
+      "dir": [
+        1.6,
+        0.0,
+        0.0
+      ],
+      "dims": [
+        20.0,
+        140.0,
+        450.0
+      ]
+    },
+    {
+      "id": "group_1_pe_traseiro",
+      "name": "Lateral Direita - Pé Traseiro",
+      "group": "group_1",
+      "groupLabel": "Lateral Direita",
+      "size": [
+        20.0,
+        140.0,
+        450.0
+      ],
+      "pos": [
+        235.0,
+        225.0,
+        -230.0
+      ],
+      "rot": [
+        1.5708,
+        -0.0,
+        -3.14159
+      ],
+      "quaternion": [
+        -0.0,
+        -0.70711,
+        0.70711,
+        0.0
+      ],
+      "dir": [
+        1.6,
+        0.0,
+        0.0
+      ],
+      "dims": [
+        20.0,
+        140.0,
+        450.0
+      ]
+    },
+    {
+      "id": "group_2_suporte_frente",
+      "name": "Assento - Travessa Suporte Frontal",
+      "group": "group_2",
+      "groupLabel": "Assento",
+      "size": [
+        20.0,
+        70.0,
+        490.0
+      ],
+      "pos": [
+        -0.0,
+        258.0,
+        272.6
+      ],
+      "rot": [
+        1.7942,
+        -1.5708,
+        0.0
+      ],
+      "quaternion": [
+        -0.55262,
+        -0.44115,
+        0.55262,
+        0.44116
+      ],
+      "dir": [
+        0.0,
+        0.8,
+        1.2
+      ],
+      "dims": [
+        20.0,
+        70.0,
+        490.0
+      ]
+    },
+    {
+      "id": "group_2_suporte_tras",
+      "name": "Assento - Travessa Suporte Traseira",
+      "group": "group_2",
+      "groupLabel": "Assento",
+      "size": [
+        20.0,
+        70.0,
+        490.0
+      ],
+      "pos": [
+        -0.0,
+        173.8,
+        -98.0
+      ],
+      "rot": [
+        1.7942,
+        -1.5708,
+        0.0
+      ],
+      "quaternion": [
+        -0.55262,
+        -0.44115,
+        0.55262,
+        0.44116
+      ],
+      "dir": [
+        0.0,
+        0.8,
+        1.2
+      ],
+      "dims": [
+        20.0,
+        70.0,
+        490.0
+      ]
+    },
+    {
+      "id": "group_2_tabua_esq",
+      "name": "Assento - Tábua Lateral Esquerda",
+      "group": "group_2",
+      "groupLabel": "Assento",
+      "size": [
+        20.0,
+        140.0,
+        450.0
+      ],
+      "pos": [
+        -175.0,
+        235.4,
+        82.8
+      ],
+      "rot": [
+        -0.2234,
+        0.0,
+        1.5708
+      ],
+      "quaternion": [
+        -0.07882,
+        0.07882,
+        0.7027,
+        0.7027
+      ],
+      "dir": [
+        0.0,
+        0.8,
+        1.2
+      ],
+      "dims": [
+        20.0,
+        140.0,
+        450.0
+      ]
+    },
+    {
+      "id": "group_2_tabua_dir",
+      "name": "Assento - Tábua Lateral Direita",
+      "group": "group_2",
+      "groupLabel": "Assento",
+      "size": [
+        20.0,
+        140.0,
+        450.0
+      ],
+      "pos": [
+        175.0,
+        235.4,
+        82.8
+      ],
+      "rot": [
+        -0.2234,
+        0.0,
+        1.5708
+      ],
+      "quaternion": [
+        -0.07882,
+        0.07882,
+        0.7027,
+        0.7027
+      ],
+      "dir": [
+        0.0,
+        0.8,
+        1.2
+      ],
+      "dims": [
+        20.0,
+        140.0,
+        450.0
+      ]
+    },
+    {
+      "id": "group_2_tabua_centro",
+      "name": "Assento - Tábua Central",
+      "group": "group_2",
+      "groupLabel": "Assento",
+      "size": [
+        20.0,
+        140.0,
+        450.0
+      ],
+      "pos": [
+        0.0,
+        235.4,
+        82.8
+      ],
+      "rot": [
+        -0.2234,
+        0.0,
+        1.5708
+      ],
+      "quaternion": [
+        -0.07882,
+        0.07882,
+        0.7027,
+        0.7027
+      ],
+      "dir": [
+        0.0,
+        0.8,
+        1.2
+      ],
+      "dims": [
+        20.0,
+        140.0,
+        450.0
+      ]
+    },
+    {
+      "id": "group_3_tabua_esq",
+      "name": "Encosto - Tábua Lateral Esquerda",
+      "group": "group_3",
+      "groupLabel": "Encosto",
+      "size": [
+        20.0,
+        140.0,
+        445.0
+      ],
+      "pos": [
+        -155.0,
+        423.1,
+        -261.7
+      ],
+      "rot": [
+        -2.00015,
+        -0.0,
+        -1.5708
+      ],
+      "quaternion": [
+        0.59504,
+        0.59504,
+        0.38201,
+        -0.38201
+      ],
+      "dir": [
+        0.0,
+        1.2,
+        -1.2
+      ],
+      "dims": [
+        20.0,
+        140.0,
+        445.0
+      ]
+    },
+    {
+      "id": "group_3_tabua_centro",
+      "name": "Encosto - Tábua Central",
+      "group": "group_3",
+      "groupLabel": "Encosto",
+      "size": [
+        20.0,
+        140.0,
+        445.0
+      ],
+      "pos": [
+        -0.0,
+        423.1,
+        -261.7
+      ],
+      "rot": [
+        -2.00015,
+        -0.0,
+        -1.5708
+      ],
+      "quaternion": [
+        0.59504,
+        0.59504,
+        0.38201,
+        -0.38201
+      ],
+      "dir": [
+        0.0,
+        1.2,
+        -1.2
+      ],
+      "dims": [
+        20.0,
+        140.0,
+        445.0
+      ]
+    },
+    {
+      "id": "group_3_suporte_topo",
+      "name": "Encosto - Travessa Traseira Superior",
+      "group": "group_3",
+      "groupLabel": "Encosto",
+      "size": [
+        20.0,
+        70.0,
+        450.0
+      ],
+      "pos": [
+        0.0,
+        585.3,
+        -357.9
+      ],
+      "rot": [
+        2.71224,
+        1.5708,
+        0.0
+      ],
+      "quaternion": [
+        0.69088,
+        0.15064,
+        0.69088,
+        0.15064
+      ],
+      "dir": [
+        0.0,
+        1.2,
+        -1.2
+      ],
+      "dims": [
+        20.0,
+        70.0,
+        450.0
+      ]
+    },
+    {
+      "id": "group_3_tabua_dir",
+      "name": "Encosto - Tábua Lateral Direita",
+      "group": "group_3",
+      "groupLabel": "Encosto",
+      "size": [
+        20.0,
+        140.0,
+        445.0
+      ],
+      "pos": [
+        155.0,
+        423.1,
+        -261.7
+      ],
+      "rot": [
+        -2.00015,
+        -0.0,
+        -1.5708
+      ],
+      "quaternion": [
+        0.59504,
+        0.59504,
+        0.38201,
+        -0.38201
+      ],
+      "dir": [
+        0.0,
+        1.2,
+        -1.2
+      ],
+      "dims": [
+        20.0,
+        140.0,
+        445.0
+      ]
+    },
+    {
+      "id": "group_3_suporte_base",
+      "name": "Encosto - Travessa Traseira Inferior",
+      "group": "group_3",
+      "groupLabel": "Encosto",
+      "size": [
+        20.0,
+        70.0,
+        450.0
+      ],
+      "pos": [
+        0.0,
+        244.3,
+        -201.8
+      ],
+      "rot": [
+        2.71224,
+        1.5708,
+        0.0
+      ],
+      "quaternion": [
+        0.69088,
+        0.15064,
+        0.69088,
+        0.15064
+      ],
+      "dir": [
+        0.0,
+        1.2,
+        -1.2
+      ],
+      "dims": [
+        20.0,
+        70.0,
+        450.0
+      ]
+    }
+  ]
+};
