@@ -1,0 +1,223 @@
+{
+  "title": "Estante de Livros (800x1800x300mm)",
+  "dimensions": "800 x 1800 x 300 mm",
+  "description": "Estante robusta em MDF 18mm com 4 prateleiras.",
+  "pieces": [
+    {
+      "id": "lat_esq",
+      "name": "Lateral Esquerda",
+      "size": [
+        18.0,
+        1800.0,
+        300.0
+      ],
+      "pos": [
+        -391.0,
+        900.0,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "dir": [
+        -1.2,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "lat_dir",
+      "name": "Lateral Direita",
+      "size": [
+        18.0,
+        1800.0,
+        300.0
+      ],
+      "pos": [
+        391.0,
+        900.0,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "dir": [
+        1.2,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "tampo_sup",
+      "name": "Tampo Superior",
+      "size": [
+        764.0,
+        18.0,
+        300.0
+      ],
+      "pos": [
+        0,
+        1791.0,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "dir": [
+        0,
+        1.2,
+        0
+      ]
+    },
+    {
+      "id": "base_inf",
+      "name": "Base Inferior (com rodapé)",
+      "size": [
+        764.0,
+        18.0,
+        300.0
+      ],
+      "pos": [
+        0,
+        79.0,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "dir": [
+        0,
+        -0.8,
+        0
+      ]
+    },
+    {
+      "id": "rodape_frontal",
+      "name": "Rodapé Frontal",
+      "size": [
+        764.0,
+        70.0,
+        18.0
+      ],
+      "pos": [
+        0,
+        35.0,
+        141.0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "dir": [
+        0,
+        -0.4,
+        1.0
+      ]
+    },
+    {
+      "id": "prateleira_1",
+      "name": "Prateleira 1",
+      "size": [
+        764.0,
+        18.0,
+        295.0
+      ],
+      "pos": [
+        0,
+        426.8,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "dir": [
+        0,
+        0,
+        0.7
+      ]
+    },
+    {
+      "id": "prateleira_2",
+      "name": "Prateleira 2",
+      "size": [
+        764.0,
+        18.0,
+        295.0
+      ],
+      "pos": [
+        0,
+        765.6,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "dir": [
+        0,
+        0,
+        0.7
+      ]
+    },
+    {
+      "id": "prateleira_3",
+      "name": "Prateleira 3",
+      "size": [
+        764.0,
+        18.0,
+        295.0
+      ],
+      "pos": [
+        0,
+        1104.4,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "dir": [
+        0,
+        0,
+        0.7
+      ]
+    },
+    {
+      "id": "prateleira_4",
+      "name": "Prateleira 4",
+      "size": [
+        764.0,
+        18.0,
+        295.0
+      ],
+      "pos": [
+        0,
+        1443.2,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "dir": [
+        0,
+        0,
+        0.7
+      ]
+    }
+  ]
+}

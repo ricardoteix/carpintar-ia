@@ -1,0 +1,199 @@
+{
+  "title": "Armário (800x600x350mm)",
+  "dimensions": "800 x 600 x 350 mm",
+  "description": "Armário em MDF 15mm com 2 porta(s) e 1 prateleira(s).",
+  "pieces": [
+    {
+      "id": "lat_esq",
+      "name": "Lateral Esquerda",
+      "size": [
+        15.0,
+        600.0,
+        350.0
+      ],
+      "pos": [
+        -392.5,
+        300.0,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "dir": [
+        -1.2,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "lat_dir",
+      "name": "Lateral Direita",
+      "size": [
+        15.0,
+        600.0,
+        350.0
+      ],
+      "pos": [
+        392.5,
+        300.0,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "dir": [
+        1.2,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "tampo_sup",
+      "name": "Tampo Superior",
+      "size": [
+        770.0,
+        15.0,
+        350.0
+      ],
+      "pos": [
+        0,
+        592.5,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "dir": [
+        0,
+        1.2,
+        0
+      ]
+    },
+    {
+      "id": "base_inf",
+      "name": "Base Inferior",
+      "size": [
+        770.0,
+        15.0,
+        350.0
+      ],
+      "pos": [
+        0,
+        7.5,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "dir": [
+        0,
+        -1.2,
+        0
+      ]
+    },
+    {
+      "id": "fundo",
+      "name": "Fundo (MDF 6mm)",
+      "size": [
+        780.0,
+        590.0,
+        6.0
+      ],
+      "pos": [
+        0,
+        300.0,
+        -172.0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "dir": [
+        0,
+        0,
+        -1.5
+      ]
+    },
+    {
+      "id": "prateleira_1",
+      "name": "Prateleira Interna 1",
+      "size": [
+        768.0,
+        15.0,
+        315.0
+      ],
+      "pos": [
+        0,
+        300.0,
+        0
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "dir": [
+        0,
+        0,
+        0.8
+      ]
+    },
+    {
+      "id": "porta_esq",
+      "name": "Porta Esquerda",
+      "size": [
+        396.5,
+        596.0,
+        15.0
+      ],
+      "pos": [
+        -199.75,
+        300.0,
+        182.5
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "dir": [
+        -0.6,
+        0,
+        1.5
+      ]
+    },
+    {
+      "id": "porta_dir",
+      "name": "Porta Direita",
+      "size": [
+        396.5,
+        596.0,
+        15.0
+      ],
+      "pos": [
+        199.75,
+        300.0,
+        182.5
+      ],
+      "rot": [
+        0,
+        0,
+        0
+      ],
+      "dir": [
+        0.6,
+        0,
+        1.5
+      ]
+    }
+  ]
+}

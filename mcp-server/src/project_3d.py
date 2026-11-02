@@ -4,6 +4,8 @@ from typing import Any, Dict, List, Optional
 import json
 import math
 import os
+import unicodedata
+import re
 
 
 def generate_krat_chair_3d() -> Dict[str, Any]:
@@ -502,8 +504,18 @@ def generate_bookshelf_3d(
     }
 
 
-def save_current_project(project_data: Dict[str, Any]) -> Dict[str, str]:
-    """Salva o projeto tanto como viewer/current_project.js quanto viewer/current_project.json.
+def slugify_name(text: str) -> str:
+    """Converte o título do projeto em um nome de arquivo seguro (slug sem acentos)."""
+    text = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+    text = text.lower()
+    text = re.sub(r'[^\w\s-]', '', text)
+    text = re.sub(r'[\s-]+', '_', text).strip('_')
+    return text or "projeto"
+
+
+def save_current_project(project_data: Dict[str, Any], custom_filename: Optional[str] = None) -> Dict[str, str]:
+    """Salva o projeto tanto como projeto ativo (viewer/current_project.js/json)
+    quanto como arquivo individual permanente na pasta viewer/projects/.
 
     A inclusão via arquivo .js contendo window.CURRENT_PROJECT permite que o arquivo index.html
     carregue os dados sem bloqueio de CORS mesmo quando aberto diretamente pelo protocolo file://.
@@ -512,6 +524,7 @@ def save_current_project(project_data: Dict[str, Any]) -> Dict[str, str]:
     viewer_dir = os.path.join(base_repo, "viewer")
     os.makedirs(viewer_dir, exist_ok=True)
 
+    # 1. Salva como projeto ativo atual
     json_path = os.path.join(viewer_dir, "current_project.json")
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(project_data, f, indent=2, ensure_ascii=False)
@@ -521,9 +534,22 @@ def save_current_project(project_data: Dict[str, Any]) -> Dict[str, str]:
         js_content = f"// Gerado automaticamente pelo assistente de marcenaria\nwindow.CURRENT_PROJECT = {json.dumps(project_data, indent=2, ensure_ascii=False)};\n"
         f.write(js_content)
 
+    # 2. Salva também permanentemente na pasta viewer/projects/
+    projects_dir = os.path.join(viewer_dir, "projects")
+    os.makedirs(projects_dir, exist_ok=True)
+
+    slug = custom_filename if custom_filename else f"{slugify_name(project_data.get('title', 'projeto'))}.json"
+    if not slug.endswith('.json'):
+        slug += '.json'
+
+    archive_path = os.path.join(projects_dir, slug)
+    with open(archive_path, "w", encoding="utf-8") as f:
+        json.dump(project_data, f, indent=2, ensure_ascii=False)
+
     return {
         "json_path": json_path,
         "js_path": js_path,
+        "archive_path": archive_path,
     }
 
 def export_project_to_file(project_data: Dict[str, Any], filename: str = "project.json") -> str:
